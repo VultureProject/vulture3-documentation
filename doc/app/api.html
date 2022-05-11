@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Application management via API</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/internet.html">
+                                    Internet
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/backend.html">
+                                    Backend
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/network.html">
+                                    Network
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/security.html">
+                                    Security
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/logs.html">
+                                    Logs
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/request_header.html">
+                                    Request header
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/response_header.html">
+                                    Response header
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/content_rewrite.html">
+                                    Content Rewriting
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/authentication.html">
+                                    Authentication
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/sso_forward.html">
+                                    SSO Forward
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Application management via API</h1>
+            <h2 id="overview">Overview</h2>
+<p>The Vulture REST API contains a small set of simple functions allowing modifications on applications/models.</p>
+<p>It follows this convention:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/&lt;OPERATION&gt;/&lt;OPTIONS&gt;/</code></pre>
+<p><strong>(Please note the ending slash (&quot;<code>/</code>&quot;) at the end)</strong></p>
+<p>For instance, if the user wants to list the names of all the applications he created, the following can be entered on a UNIX shell:</p>
+<pre><code>curl --ssl -k -E /var/db/mongodb/mongod.pem 'https://localhost:8000/api/rest/app/list/all/name/'</code></pre>
+<p>The Vulture REST API introduces models for applications. A model is a special application used to generate other applications. It cannot be enabled.</p>
+<h2 id="application-listing">Application listing</h2>
+<p>First, the Vulture REST API provides some listing functions, letting the user know about the applications state.</p>
+<h3 id="listing-all-applications-and-models">Listing all applications and models</h3>
+<p>To list all the existing applications (and models), the following must be entered:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/list/all/</code></pre>
+<h3 id="listing-all-applications">Listing all applications</h3>
+<p>To list all the applications (not models), enter the following:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/list/application/</code></pre>
+<h3 id="listing-all-models">Listing all models</h3>
+<p>This line will list all the existing models:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/list/model/</code></pre>
+<h3 id="getting-an-application-or-a-model-by-its-name">Getting an application or a model by its name</h3>
+<p>Enter the following to get an application or a model by its name:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/list/name/&lt;NAME_TO_ENTER&gt;/</code></pre>
+<h3 id="getting-one-or-several-applicationsmodels-given-a-regex">Getting one or several applications/models, given a REGEX</h3>
+<p>You can also get applications or models with a REGEX:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/list/regex/&lt;REGEX_TO_ENTER&gt;/</code></pre>
+<p>Currently, the REGEX provided can only contain the following characters:</p>
+<ul>
+<li>The alphanumeric characters (from &quot;<code>a</code>&quot; to &quot;<code>z</code>&quot;, &quot;<code>A</code>&quot; to &quot;<code>Z</code>&quot; and &quot;<code>0</code>&quot; to &quot;<code>9</code>&quot;)</li>
+<li>Underscores (&quot;<code>_</code>&quot;)</li>
+<li>Hash characters (&quot;<code>#</code>&quot;)</li>
+<li>Spaces (&quot;<code> </code>&quot;)</li>
+</ul>
+<p>Special characters must be encoded accordingly: &quot;<code>%20</code>&quot; for spaces, and &quot;<code>%23</code>&quot; for hashes.</p>
+<h3 id="filtering-the-fields">Filtering the fields</h3>
+<p>All requests shown above can contain an option allowing the user to filter the fields returned. For example, the following request returns the name of the application <strong>MyApp</strong>:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/list/name/MyApp/name/</code></pre>
+<p>If the user wants to filter several fields, a pipe (&quot;<code>|</code>&quot;) character can be given between each field. For instance, the following request returns the same result than before, adding an extra field showing the different listeners of the application <strong>MyApp</strong>:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/list/name/MyApp/name|listeners/</code></pre>
+<h2 id="applicationmodel-generation">Application/Model generation</h2>
+<p>Applications and models can be generated from a given model using this POST request:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/generate/
+
+{
+    "model": "&lt;MODEL_NAME&gt;",
+    &lt;OPTION #1&gt;,
+    .
+    .
+    .
+    &lt;OPTION #N&gt;
+}</code></pre>
+<p>Options are given to customize the generated application. For instance, this POST request generates a new enabled application named <strong>MyApp</strong> from a model <strong>MyModel</strong>, with a different public name:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/generate/
+
+{
+    "model": "MyModel",
+    "name": "MyApp",
+    "enabled": true,
+    "public_name": "myapp.lan"
+}</code></pre>
+<p>The default behavior will create a disabled application (and not a model).</p>
+<p>For example, the following POST request will generate a disabled application named <code>&lt;MODEL_NAME&gt;_copy_&lt;RANDOM_STRING&gt;</code> (since no name was given, a random one is provided instead):</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/generate/
+
+{
+    "model": "&lt;MODEL_NAME&gt;"
+}</code></pre>
+<p>Finally, an extra option named <strong>reload</strong> can be provided in the URL to reload the newly created application:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/generate/reload/
+
+{
+    "model": "&lt;MODEL_NAME&gt;"
+}</code></pre>
+<p>Please note that reference fields cannot be modified at the current time.</p>
+<h2 id="applicationmodel-updating">Application/Model updating</h2>
+<p>Applications and models can be modified with a POST request, similar to the one used to generate new applications:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/update/&lt;APPLICATION_NAME_TO_UPDATE&gt;/
+
+{
+    &lt;OPTION #1&gt;,
+    .
+    .
+    .
+    &lt;OPTION #N&gt;
+}</code></pre>
+<p>For example, the following request will modify the application named <strong>MyApp</strong>, changing its name to <strong>MyUpdatedApp</strong> and its public name to <strong>myupdatedapp.lan</strong>:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/update/MyApp/
+
+{
+    "name": "MyUpdatedApp",
+    "public_name": "myupdatedapp.lan"
+}</code></pre>
+<p>Please note that reference fields cannot be modified at the current time.</p>
+<h2 id="applicationmodel-deletion">Application/Model deletion</h2>
+<p>An application or a model can be deleted with the following request:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/delete/&lt;APPLICATION_NAME_TO_DELETE&gt;/</code></pre>
+<p>As an example, this POST request will delete the application named <strong>MyApp</strong>:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/delete/MyApp/</code></pre>
+<p><strong>BE CAREFUL</strong>, an application or a model deleted cannot be restored.</p>
+<h2 id="miscellaneous">Miscellaneous</h2>
+<h3 id="statistics">Statistics</h3>
+<p>Various stats can be provided concerning the applications with the following request:</p>
+<pre><code>&lt;ROOT&gt;/api/rest/app/stats/</code></pre>
+<p>Currently, it returns the count number of the models and applications:</p>
+<pre><code>{
+    "models": 3, 
+    "applications": {
+        "total": 12, 
+        "enabled": 8, 
+        "not_enabled": 4
+    }, 
+    "total": 15
+}</code></pre>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

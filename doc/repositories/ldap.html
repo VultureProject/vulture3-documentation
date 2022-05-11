@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LDAP repository</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/repositories/ldap.html">
+                                    LDAP / AD
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/kerberos.html">
+                                    Kerberos
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/radius.html">
+                                    Radius
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/sql.html">
+                                    SQL
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/syslog.html">
+                                    Syslog
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/mongodb.html">
+                                    MongoDB
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/elastic.html">
+                                    Elasticsearch
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/otp.html">
+                                    OTP
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>LDAP repository</h1>
+            <h2 id="overview">Overview</h2>
+<p>LDAP or Active Directory can be used to authenticate users.</p>
+<ul>
+<li><code>Repository Name</code>: Friendly name that will be display in the GUI.</li>
+<li><code>Host</code>: IP address or hostname of the LDAP server.</li>
+<li><code>Port</code>: LDAP TCP port number.</li>
+<li><code>Protocol</code>: LDAPv2 or LDAPv3 - depending of your LDAP server version.</li>
+<li><code>Encryption scheme</code>: Can be none, LDAPS or start-TLS.</li>
+<li><code>Service account DN</code>: The service account DN to use to bind to LDAP server;</li>
+<li><code>Service account Password</code>: The associated password.</li>
+<li><code>Base DN</code>: The search suffix.</li>
+</ul>
+<p>The <code>service account DN</code> is used by Vulture to perform a full bind onto the LDAP server. This account will be used by Vulture to look for users as well as for 'special' operation such as password reset.</p>
+<p>You cannot save your LDAP configuration without clicking on &quot;TEST LDAP connection&quot;. This ensures that Vulture can bind onto your LDAP server using the provided login and password. In case of a failure during the test process, please check:</p>
+<ul>
+<li>Network filtering: Check that Vulture can contact you LDAP server on the provided IP address and port.</li>
+<li>Wrong DN or password.</li>
+<li>TLS issue: The LDAP server certificate may not been trusted by Vulture.</li>
+</ul>
+<h2 id="user-settings">User settings</h2>
+<p>This tab is used to tell Vulture where it can find users for authentication.</p>
+<ul>
+<li><code>User search scope</code> : This is the starting point of an LDAP user search and the depth from the base DN to which the search should occur.
+<ul>
+<li><strong>subtree</strong>: Search of all entries at all levels under and including the specified base DN.</li>
+<li><strong>one</strong>: Search of all entries one level under the base DN - but not including the base DN and not including any entries under that one level under the base DN.</li>
+<li><strong>base</strong>: Search only the entry at the base DN, resulting in only that entry being returned.</li>
+</ul></li>
+<li><code>User DN</code> : This is the starting point of the users LDAP search. Base DN is automatically added after it.</li>
+<li><code>User attribute</code> : LDAP <strong>attribute</strong> that references a user, typically this is <code>cn</code> or <code>uid</code> or <code>SamAccountName</code> depending of your LDAP type and configuration. When you try to login on Vulture, the login attribute of the user will be mapped to this LDAP attribute.</li>
+<li><code>User search filter</code> : LDAP <strong>filter</strong> that is used during the LDAP search to find users. Try to make a restrictive LDAP filter to improve security. For example: <code>(objectclass=person)</code></li>
+<li><code>Account locked filter</code> : LDAP <strong>filter</strong> used by Vulture to check if a user account is locked.</li>
+<li><code>Need change password filter</code> : LDAP <strong>Filter</strong> used by Vulture to check if a user must change its password.</li>
+<li><code>Group attribute</code> : LDAP <strong>attribute</strong> used by Vulture to retrieve the groups whose user belongs to. For example: <code>memberOf</code>.</li>
+<li><code>Mobile attribute</code> : LDAP <strong>attribute</strong> used by Vulture to get the user's phone number. This is used by the <a href="/doc/repositories/otp.html">One Time Password</a> authentication feature.</li>
+<li><code>Email attribute</code> : LDAP <strong>attribute</strong> used by Vulture to get the user's email address. This is used by the <a href="/doc/repositories/otp.html">One Time Password</a> authentication feature.</li>
+</ul>
+<p>When clicking on &quot;Test User authentication settings&quot;, you can test if your settings are good. Vulture will prompt for a login and a password and will try to fetch user's group, email and phone number.
+If authentication is unsuccessful, the error message should indicates the reason. Usually this is because of an authentication failure or wrong LDAP filters / attributes.</p>
+<h2 id="groups-settings">Groups settings</h2>
+<ul>
+<li><code>Group search scope</code> : This is the starting point of an LDAP group search and the depth from the base DN to which the search should occur.
+<ul>
+<li><strong>subtree</strong>: Search of all entries at all levels under and including the specified base DN</li>
+<li><strong>one</strong>: Search of all entries one level under the base DN - but not including the base DN and not including any entries under that one level under the base DN</li>
+<li><strong>base</strong>: Search only the entry at the base DN, resulting in only that entry being returned</li>
+</ul></li>
+<li><code>Group DN</code> : This is the starting point of the groups LDAP search. Base DN is automatically added after it.</li>
+<li><code>Group attribute</code> :  LDAP <strong>attribute</strong> that references a group, typically this is <code>cn</code> or <code>gid</code> depending of your LDAP type and configuration.</li>
+<li><code>Group search filter</code> : LDAP <strong>filter</strong> that is used during the LDAP search to find groups. Try to make a restrictive LDAP filter to improve security. For example: <code>(objectclass=groupOfNames)</code></li>
+<li><code>Members attribute</code> : LDAP <strong>attribute</strong> that is used to get members of a given groups. For example: <code>member</code></li>
+</ul>
+<p>When clicking on &quot;Test group settings&quot;, you can test if your settings are good. Vulture will prompt for a group name and, if found, will return the users contained in the group</p>
+<h2 id="oauth2-settings">OAuth2 settings</h2>
+<p>Please see <a href="/doc/authentication/oauth2.html">OAuth2 Authentication</a> for details.</p>
+<h2 id="working-examples">Working examples</h2>
+<h3 id="openldap">OpenLDAP</h3>
+<p><strong>Connection settings</strong>:</p>
+<ul>
+<li><code>Repository Name</code>: OpenLDAP-repo</li>
+<li><code>Host</code>: 10.20.20.20</li>
+<li><code>Port</code>: 389</li>
+<li><code>Protocol</code>: LDAPv3</li>
+<li><code>Encryption scheme</code>: LDAPS</li>
+<li><code>Service account DN</code>: UID=ldapservice,OU=Users,DC=mydomain,DC=lan</li>
+<li><code>Service account Password</code>: *<strong><strong>****</strong></strong></li>
+<li><code>Base DN</code>: DC=mydomain,DC=lan</li>
+</ul>
+<p><strong>User settings</strong>:</p>
+<ul>
+<li><code>User search scope</code> : one (one level under suffix)</li>
+<li><code>User DN</code> : CN=Users</li>
+<li><code>User attribute</code> : cn</li>
+<li><code>User search filter</code> : (objectclass=person)</li>
+<li><code>Account locked filter</code> : (lockoutTime&gt;=1)</li>
+<li><code>Need change password filter</code> : (pwdLastSet=0)</li>
+<li><code>Group attribute</code> : memberOf</li>
+<li><code>Mobile attribute</code> : telephoneNumber</li>
+<li><code>Email attribute</code> : mail</li>
+</ul>
+<p><strong>Groups settings</strong>:</p>
+<ul>
+<li><code>Group search scope</code> : subtree (all levels under suffix)</li>
+<li><code>Group DN</code> : CN=Users</li>
+<li><code>Group attribute</code> :  cn</li>
+<li><code>Group search filter</code> : (objectclass=Group)</li>
+<li><code>Members attribute</code> : member</li>
+</ul>
+<h3 id="microsoft-active-directory">Microsoft Active Directory</h3>
+<p><strong>Connection settings</strong>:</p>
+<ul>
+<li><code>Repository Name</code>: AD-repo</li>
+<li><code>Host</code>: 10.10.10.10</li>
+<li><code>Port</code>: 389</li>
+<li><code>Protocol</code>: LDAPv3</li>
+<li><code>Encryption scheme</code>: LDAPS</li>
+<li><code>Service account DN</code>: AD_Service</li>
+<li><code>Service account Password</code>: *<strong><strong>****</strong></strong></li>
+<li><code>Base DN</code>: DC=mydomain,DC=lan</li>
+</ul>
+<p><strong>User settings</strong>:</p>
+<ul>
+<li><code>User search scope</code> : one (one level under suffix)</li>
+<li><code>User DN</code> : CN=Users</li>
+<li><code>User attribute</code> : SAMAccountName</li>
+<li><code>User search filter</code> : (objectclass=person)</li>
+<li><code>Account locked filter</code> : (lockoutTime&gt;=1)</li>
+<li><code>Need change password filter</code> : (pwdLastSet=0)</li>
+<li><code>Group attribute</code> : memberOf</li>
+<li><code>Mobile attribute</code> : telephoneNumber</li>
+<li><code>Email attribute</code> : mail</li>
+</ul>
+<p><strong>Groups settings</strong>:</p>
+<ul>
+<li><code>Group search scope</code> : subtree (all levels under suffix)</li>
+<li><code>Group DN</code> : CN=Users</li>
+<li><code>Group attribute</code> :  sAMAccountName</li>
+<li><code>Group search filter</code> : (objectclass=Group)</li>
+<li><code>Members attribute</code> : member</li>
+</ul>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

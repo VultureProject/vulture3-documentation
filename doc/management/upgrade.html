@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Upgrade</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                    Nodes
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/services.html">
+                                    Services
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/pki.html">
+                                    PKI
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/users.html">
+                                    Users
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/reputation.html">
+                                    Reputation
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/logs.html">
+                                    Logs Viewer
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/management/upgrade.html">
+                                    Upgrade
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Upgrade</h1>
+            <h2 id="overview">Overview</h2>
+<p>On the Vulture's main GUI or from the <a href="/doc/management/nodes.html">Node Management form</a>, you may notice messages telling you that Vulture needs upgrade.<br/>
+This works with a hourly crontab that queries <a href="https://download.vultureproject.org">https://download.vultureproject.org</a> and compares your current version of Vulture with the latest one available on the project's website.</p>
+<h2 id="upgrade-process">Upgrade process</h2>
+<p>When an update is available, you just have to click on 'upgrade' to upgrade the outdated component:</p>
+<ul>
+<li>It may be an update for the Vulture-Engine (Vulture's version of Apache httpd + mod_vulture)?=.</li>
+<li>It may be an update for the Vulture-GUI (Vulture's GUI python code).</li>
+</ul>
+<p><code>If both Vulture-GUI and Vulture-Engine updates are available, you MUST upgrade the two components, starting with Vulture-GUI</code>.<br/>
+Please notice that you should never reload any worker configuration if both Engine and GUI are not up-to-date.<br/>
+<strong>This may cause side-effect: For example, Vulture-GUI may insert special directives in Apache worker's configuration, but these directives will be unknown by the Vulture-Engine, that will refuse to start</strong>.</p>
+<p>Vulture-GUI updates may affect system as they can:</p>
+<ul>
+<li>Create / modify existing config on the filesystem.</li>
+<li>Install or remove FreeBSD packages, via &quot;pkg install&quot; / &quot;pkg remove&quot;.</li>
+<li>Download and install Vulture-LIBS, which contains the Python virtual environment for GUI as well as some compiled libraries required by Vulture.</li>
+</ul>
+<p>The embedded compiled libraries are, as of version 1.56 of Vulture, the following:</p>
+<ul>
+<li>libgcc_s.so.1</li>
+<li>libquadmath.so.0</li>
+<li>libgfortran.so.3</li>
+<li>liblapack.so.4</li>
+<li>libblas.so.2</li>
+<li>libopenblas.so.0</li>
+<li>libopenblasp.so.0</li>
+</ul>
+<p>These libraries are available in FreeBSD packaging, but they imply installing &quot;dangerous&quot; packages such as the gcc compiler.
+So we preferred to manually embed these libraries into Vulture-LIBS.<br/>
+They are placed into /usr/local/lib/vulture/.</p>
+<p>When you click on upgrade, the GUI will wait until update is over. Depending of your Internet connection speed and the performance of your Vulture server, it may take some time.<br/>
+The GUI may enter into a timeout and display an HTML 504 error message. This is harmless, just wait a couple of minutes and try later accessing the GUI.<br/>
+If something goes wrong, check out the logs.</p>
+<h2 id="cluster-upgrade">Cluster upgrade</h2>
+<p>In cluster configuration, you have to repeat the upgrade process on each node. <br/>
+<strong>WAIT FOR A NODE TO FINISH UPDATE BEFORE LAUNCHING UPDATE ON ANOTHER NODE</strong>.</p>
+<h2 id="technical-details">Technical details</h2>
+<p>You can upgrade by hand with the following commands:<br/></p>
+<pre><code>$ /home/vlt-sys/scripts/install_updates gui
+$ /home/vlt-sys/scripts/install_updates engine</code></pre>
+<p>With those commands, you will see what's happenning and check if an error occured during the upgrade process.</p>
+<h1 id="major-freebsd-upgrade-111--gt-112">Major FreeBSD UPGRADE (11.1 -&gt; 11.2)</h1>
+<p>Follow these guidelines to upgrade, for example, from FreeBSD-11.1 to FreeBSD-11.2</p>
+<h2 id="stop-redis-on-all-nodes">Stop redis on all nodes</h2>
+<p>Stop Redis : This needs to be done on every nodes at the same time</p>
+<pre><code>service redis stop  &amp;&amp; service sentinel stop</code></pre>
+<h2 id="upgrade-freebsd">Upgrade FreeBSD</h2>
+<pre><code>pkg update        
+pkg upgrade      
+freebsd-update fetch
+freebsd-update install
+freebsd-update upgrade -r 11.2-RELEASE</code></pre>
+<h2 id="upgrade-vulture-libraries">Upgrade Vulture libraries</h2>
+<pre><code> - cd /tmp
+ - rm ./Vulture-LIBS.tar.gz
+ - /usr/local/bin/wget https://download.vultureproject.org/v3/11.2/Vulture-LIBS.tar.gz
+ - cd /home/vlt-gui
+ - rm -rf ./env
+ - /usr/bin/tar xf /tmp/Vulture-LIBS.tar.gz
+ - /usr/sbin/chown -R vlt-gui:vlt-gui /home/vlt-gui/
+ - /bin/sh /home/vlt-gui/lib-11.2/install.sh</code></pre>
+<h2 id="reboot-and-finish-installation">Reboot and finish installation</h2>
+<pre><code> - shutdown -r now
+ - freebsd-update install</code></pre>
+<h2 id="vulture-upgrade">Vulture upgrade</h2>
+<pre><code> - /home/vlt-sys/scripts/check_updates.hour
+ - /home/vlt-sys/scripts/install_updates gui
+ - /home/vlt-sys/scripts/install_updates engine</code></pre>
+<h1 id="major-freebsd-upgrade-112--gt-120">Major FreeBSD UPGRADE (11.2 -&gt; 12.0)</h1>
+<p>Follow these guidelines to upgrade your Vulture from FreeBSD-11.2 to FreeBSD-12.0.</p>
+<p><strong>Please follow this steps carefully !</strong></p>
+<h2 id="stop-redis-on-all-nodes-1">Stop redis on all nodes</h2>
+<p>Stop Redis : This needs to be done on every nodes at the same time</p>
+<pre><code>service redis stop  &amp;&amp; service sentinel stop</code></pre>
+<h2 id="upgrade-freebsd-1">Upgrade FreeBSD</h2>
+<pre><code>freebsd-update fetch -F
+freebsd-update install
+freebsd-update upgrade -r 12.0-RELEASE
+freebsd-update install
+pkg update -f &amp;&amp; pkg upgrade -y</code></pre>
+<h2 id="fix-potential-missing-library-amp-reboot">Fix potential missing library &amp; reboot</h2>
+<pre><code> - find / -name "libgdbm.so.*" | grep so.4 || ln -s /usr/local/lib/libgdbm.so.6 /usr/local/lib/libgdbm.so.4
+ - shutdown -r now</code></pre>
+<h2 id="continue-freebsd-upgrade-upgrade-gui-amp-engine-and-reboot">Continue FreeBSD upgrade, upgrade GUI &amp; Engine, and reboot</h2>
+<pre><code>freebsd-update install
+/home/vlt-sys/scripts/check_updates.hour
+/home/vlt-sys/scripts/install_updates engine
+service vulture stop
+/home/vlt-sys/scripts/install_updates gui
+pkg update -f &amp;&amp; pkg upgrade -y
+freebsd-update install
+shutdown -r now</code></pre>
+<h2 id="finish-packages-and-libraries-upgrade">Finish packages and libraries upgrade</h2>
+<p><strong>At reboot, the mongod service should be stopped.</strong></p>
+<p><strong>Also, you have to install the mongodb34 package because mongodb32 is not supported on FreeBSD 12.0.</strong></p>
+<pre><code>pkg install -y mongodb34
+service mongod start
+cd /tmp
+rm -f ./Vulture-LIBS.tar.gz
+wget https://download.vultureproject.org/v3/12.0/Vulture-LIBS.tar.gz
+cd /home/vlt-gui
+rm -rf ./env
+tar xf /tmp/Vulture-LIBS.tar.gz
+./lib-12.0/install.sh
+reboot</code></pre>
+<p><strong>After this last reboot, your Vulture should work properly.</strong></p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

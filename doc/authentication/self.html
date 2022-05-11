@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Self-service portal</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/monitoring/general.html">
+                                    Monitoring
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/monitoring/diagnostic.html">
+                                    Diagnostic
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/authentication/self.html">
+                                    Self-service
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/authentication/oauth2.html">
+                                    OAuth2 responder
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/authentication/ml.html">
+                                    Anomaly detection
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Self-service portal</h1>
+            <h2 id="overview">Overview</h2>
+<p>Any authenticated user may access a &quot;self-service portal&quot; from which it will be able to perform several operations:</p>
+<ul>
+<li>See what are the applications available for him.</li>
+<li>Change its password.</li>
+</ul>
+<p>The self-service is also available for anonymous users, if they previously have received an email when they lost their password.<br/>
+The appearance and the content of the self-service portal is defined from the <a href="/doc/app/template.html">Portal template</a> configuration.</p>
+<h2 id="how-to-access-the-self-service">How to access the self-service</h2>
+<p>The self-service may be accessed through the following URI:</p>
+<pre><code>http(s)://&lt;public_uri&gt;/&lt;public_token_name&gt;/self</code></pre>
+<ul>
+<li>public_uri is your application's public URI.</li>
+<li>public_token_name is configurable from <a href="/doc/management/services.html">&quot;Services / Vulture setting&quot;</a>.</li>
+</ul>
+<p><strong>Note: https should always be used when accessing the self-service portal.</strong></p>
+<p>Here is an example of a valid self-service URI: <strong><a href="http://www.example.com/99fa9c9f9dcb141a/self">http://www.example.com/99fa9c9f9dcb141a/self</a></strong>.</p>
+<h2 id="self-service-content">Self-service content</h2>
+<h3 id="password-change">Password change</h3>
+<p>If the self-service template contains the <code>{{changePassword}}</code> tag , the password change link will be displayed:</p>
+<pre><code>http(s)://&lt;public_uri&gt;/&lt;public_token_name&gt;/self/change</code></pre>
+<p>If the user clicks on this link, Vulture will show the change password HTML form. <br/>
+If something goes wrong during password change, Vulture will display an error message. It will display a success message otherwise. Message can be customized from the <a href="/doc/app/template.html">Portal template</a> configuration</p>
+<p><strong>Note: If the old password is not good, Vulture won't display any error message.</strong></p>
+<h3 id="password-lost">Password lost</h3>
+<p>Self-service portal is also available for anonymous users who wants to reset their password. <br/>
+The tag <code>{{lostPassword}}</code> may for example be added on the login form so the user may ask for its password reset.<br/><br/>
+The lost password link is:</p>
+<pre><code>http(s)://&lt;public_uri&gt;/&lt;public_token_name&gt;/self/lost</code></pre>
+<p>If the user click on this link, Vulture will show the &quot;lost password&quot; HTML form. In this form he will have to provide its email address. Note that this email address should be associated to the user's account inside the authentication repository. Of course, <strong>&quot;User email address column name&quot;</strong> MUST be correctly defined in the <a href="/doc/repositories/repo.html">repository configuration</a></p>
+<p><br/>
+Thanks to the public_uri, Vulture will know on which application the user wants to reset his password and thus will be able to found the correct authentication repository.<br/>
+<br/>
+If the user submits a valid email address, he will receive a email containing the link to reset his password.
+If the user submits a invalid email address, no email will be send, but Vulture will still display the 'an email has been sent' message, for security reasons. The email received by the user contains a link that is only valid during a short period of time: <strong>10 minutes</strong>. During 10 minutes, the temporary key will be hold in Redis session, and will be counted into <a href="/doc/monitoring/general.html">&quot;password reset statistics&quot;</a>.</p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

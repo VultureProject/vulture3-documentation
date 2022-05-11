@@ -1,0 +1,77 @@
+.panel-doc .panel-title {
+    font-size: 30px
+}
+
+.panel-doc h2 {
+    font-size: 25px
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+
+.entry-content table {
+    font-weight: bold;
+    margin: 0 0 2em;
+    width: 100%;
+}
+
+.show {
+    display: block !important;
+}
+
+#section-home.heading-block span{
+    text-shadow:1px 1px 2px #000000;
+    font-weight: 600;
+
+}
+
+#section-home.heading-block>span:not(.before-heading) {
+    display: block;
+    margin-top: 10px;
+    font-weight: 300;
+    color: #FFFDFD;
+
+}
+
+li>ul>li.active {
+    background-color: #f8f8f8;
+}
+
+li.active {
+    background-color: #f8f8f8;
+}
+
+.sidebar-default .navigation>li ul {
+    background-color: #ffffff;
+}
+
+.contact-support {
+    background-color: #F5F5F5;
+    border: 2px solid #F9B17D;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.contact-support p {
+    margin-bottom: 5px;
+}
+
+.strong {
+    font-weight: 700;
+}
+
+.no-bottom-margin{
+  margin-bottom: 5px !important;
+}
+
+.panel-doc img{
+    box-shadow: 5px 5px 5px 7px rgb(136, 136, 136);
+}
+
+#primary-menu ul li a.active{
+    color:#F5933A;
+}

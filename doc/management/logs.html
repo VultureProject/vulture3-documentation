@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Log Viewer</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                    Nodes
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/services.html">
+                                    Services
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/pki.html">
+                                    PKI
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/users.html">
+                                    Users
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/reputation.html">
+                                    Reputation
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/management/logs.html">
+                                    Logs Viewer
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/upgrade.html">
+                                    Upgrade
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Log Viewer</h1>
+            <h2 id="overview">Overview</h2>
+<p>Depending on its configuration, Vulture will send logs into its internal MongoDB Repository (default) or external Elastic or MongoDB.
+There are different type of logs inside Vulture:</p>
+<ul>
+<li>Internal Vulture logs (GUI, Portal, process...).</li>
+<li>Internal Vulture diagnostic logs (updated every minute), <a href="/doc/monitoring/diagnostic.html">see diagnostic</a>.</li>
+<li>Packet filter logs, <a href="/doc/waf/pf.html">see pf</a>.</li>
+<li>Apache Worker logs, <a href="/doc/app/logs.html">see application</a>.</li>
+</ul>
+<p>Several actions and options are available from the search toolbar :</p>
+<ul>
+<li><code>Search</code> : Shows the query builder form.</li>
+<li><code>Real Time</code> : Log display is updated continuously (every second).</li>
+<li><code>Configuration</code> : Shows the configuration form to customize your display.</li>
+<li><code>Date</code> : Date and time filter.</li>
+<li><code>Query</code> : The active query filter.</li>
+<li><code>Export to csv file</code> : You can export the query result into a CSV file.</li>
+<li><code>Reset</code> : Delete the query filter.</li>
+<li><code>Execute</code> : Execute the search query.</li>
+<li><code>Save as dataset</code> : After a query has been executed, you can save the resulting logs into a &quot;Dataset&quot;. This dataset can be used later to build a mathematical model and find abnomalies based on SVM algorithms (Support Vector Machine). <a href="/doc/waf/svm.html">See Machine Learning</a> for details.</li>
+</ul>
+<p><i class="fa fa-warning"></i>&nbsp;&nbsp;If you use ElasticSearch to store your logs, be careful of the version of the ElasticSearch python library.<br/>
+You'll need to adapt it with your ElasticSearch version. See <a href="https://elasticsearch-py.readthedocs.io/en/master/#compatibility">ElasticSearch-PY version</a><br/>
+To update the lib:
+<code>/home/vlt-gui/env/bin/pip install elasticsearch==&lt;version&gt;</code></p>
+<h2 id="query-builder">Query builder</h2>
+<p>The query builder let you build a query with AND / OR logic and save it for further reuse.
+<img src="/doc/img/log-builder.png" alt="Log builder" /></p>
+<h2 id="detail">Detail</h2>
+<p>When you click on a log line, you've got all the details on the log entry:
+<img src="/doc/img/log-detail.png" alt="Log detail" /></p>
+<h2 id="available-actions-when-you-quotright-clickquot-on-a-line-of-log">Available actions when you &quot;right click&quot; on a line of log</h2>
+<h3 id="add-ip-to-blacklistquot">Add IP to blacklist&quot;</h3>
+<blockquote>
+<p>This will automatically add the source IP address to <code>pf network Firewall</code> blacklist. See <a href="/doc/waf/pf.html">PF Blacklist</a></p>
+</blockquote>
+<h3 id="add-whitelistblacklist">Add whitelist/blacklist</h3>
+<blockquote>
+<p>A menu will appear with a modSecurity Rule Wizard. You will be able to review the rule automatically created for you and decide wether you want to accept or block the corresponding HTTP request. Once done, the rule will be automatically added to the blacklist / whitelist associated with the Web application. The corresponding rules are available in <a href="/doc/waf/ruleset.html">WAF Ruleset</a>.</p>
+</blockquote>
+<p><img src="/doc/img/wl_bl.png" alt="WLBL Builder" /></p>
+<p>With this, you can build some ModSecurity Rules with data all the data of the selected log line.<br/>
+In this example: <code>SecRule REQUEST_URI "@contains id=1" "id:{id},deny,nolog,auditlog,msg:'BLACKLIST'"</code><br/>
+With this rule, if the string &quot;id=1&quot; is found anywhere in the requested uri, ModSecurity will block it.</p>
+<h3 id="find-related-rules">Find related rules</h3>
+<blockquote>
+<p>This menu allows you to find all rules related to the log entry. This way you can edit / delete it.</p>
+</blockquote>
+<p><img src="/doc/img/find_rule.png" alt="Find Rule" /></p>
+<p>You will need to reload your application listener after that.</p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

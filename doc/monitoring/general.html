@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Monitoring</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/monitoring/general.html">
+                                    Monitoring
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/monitoring/diagnostic.html">
+                                    Diagnostic
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/authentication/self.html">
+                                    Self-service
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/authentication/oauth2.html">
+                                    OAuth2 responder
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/authentication/ml.html">
+                                    Anomaly detection
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Monitoring</h1>
+            <h2 id="quotstatusquot-menu">&quot;Status&quot; menu</h2>
+<p>In this section you will find statistics and usefull information about the health of your Vulture cluster. It is important to check on a regularly basis that everything is working well. Vulture will retain 30 days of statistics within its internal database. Metrics are refreshed every minute by a Vulture internal crontab running as 'vlt-gui'. <br/>
+Metrics are stored inside MongoDB repository. <br/></p>
+<h3 id="status--general">Status / General</h3>
+<p>On this view you will find the status of Vulture's main processes:</p>
+<ul>
+<li><code>mongod</code>: The internal Vulture Database: Mandatory, must always be running.</li>
+<li><code>haproxy</code>: The process in charge of load-balancing incoming trafic.</li>
+<li><code>rsyslogd</code>: The process in charge of sending logs to remote syslog, mongodb or elastic.</li>
+<li><code>pf</code>: The network Firewall, recommended, should always be running.</li>
+<li><code>ntpd</code>: NTP daemon, should always run (it is mandatory that all Vulture nodes within a cluster are perfectly synchronized).</li>
+<li><code>sshd</code>: Can be turned off to avoid SSH access over network.</li>
+<li><code>redis</code>: Mandatory, must always be running.</li>
+</ul>
+<p>You will also find:</p>
+<ul>
+<li>The number of active Listeners (Number of IP addresses/ports on with Apache processes are listening)</li>
+<li>The number of active Applications (Web Applications available through Vulture)</li>
+</ul>
+<p><strong>Note that all these metrics are refreshed every minute</strong>. The last system status' date and time is displayed on this page, so that you can check when the last probe has been done.<br/>
+<br/>
+Metrics are also available for Redis entries :</p>
+<ul>
+<li><code>OAuth2 Tokens</code>: Number of active OAuth2 tokens in Vulture's cache.</li>
+<li><code>Password Tokens</code>: Number of active password reset links sent.</li>
+<li><code>Temporary Tokens</code>: Number of temporary sessions (related to users redirected to the portal but not yet authentified).</li>
+<li><code>Portal Tokens</code>: Number of active portal sessions.</li>
+<li><code>Application Tokens</code>: Number of currently logged users on all application. A 30-days picture is available in the &quot;Status / User&quot; view (see below).</li>
+<li><code>UA Entries</code>: Number of User-Agent md5 hashes in redis.</li>
+<li><code>Reputation</code>: Indicates if the reputation database is loaded in redis.
+<br/></li>
+</ul>
+<p>At least, CPU / RAM and SWAP usage are displayed in real time (refreshed every second).</p>
+<h3 id="status--system">Status / System</h3>
+<p>CPU, RAM, SWAP and partitions usage evolution are displayed on this page. You will also find the evolution of the number of processes running on each Vulture Node.</p>
+<h3 id="status--network">Status / Network</h3>
+<h5><code>Bytes received over time</code></h5>
+<p>This metric is collected with <strong>psutil.net_io_counters / bytes_recv:</strong> (<a href="https://pypi.python.org/pypi/psutil">https://pypi.python.org/pypi/psutil</a>). <br/>
+It is the number of bytes per second received by Vulture on all network interfaces.
+<br/></p>
+<h5><code>Bytes sent over time</code></h5>
+<p>This metric is collected with <strong>psutil.net_io_counters / bytes_sent:</strong> (<a href="https://pypi.python.org/pypi/psutil">https://pypi.python.org/pypi/psutil</a>). <br/>
+It is the number of bytes per second sent by Vulture on all network interfaces.
+<br/></p>
+<h5><code>Number of entries in the firewall state table</code></h5>
+<p>This metric is collected with <strong>pfctl -si</strong>. <br/>
+This is a very important stat: It shows the number of active entries in the pf firewall state table. By default Vulture pf configuration allow 50,000 active entries in the pf state table. If you reach this limit, Vulture will refuse any new incoming connection. As a result, it won't be accessible anymore until some entries are removed from the state table. <br/>
+You can increase this limit in the network firewall configuration (See <a href="/doc/waf/pf.html">Network firewall</a>).
+<br/></p>
+<h5><code>Incoming packet dropped</code></h5>
+<p>This metric is collected with <strong>psutil.net_io_counters / dropin</strong> (<a href="https://pypi.python.org/pypi/psutil">https://pypi.python.org/pypi/psutil</a>). <br/>
+It is the total number of incoming packets which were dropped on all network interfaces.
+<br/></p>
+<h5><code>Number of errors while receiving</code></h5>
+<p>This metric is collected with <strong>psutil.net_io_counters / errin </strong> (<a href="https://pypi.python.org/pypi/psutil">https://pypi.python.org/pypi/psutil</a>). <br/>
+It is the total number of errors while receiving.
+<br/></p>
+<h5><code>Number of errors while sending</code></h5>
+<p>This metric is collected with <strong>psutil.net_io_counters / errout </strong> (<a href="https://pypi.python.org/pypi/psutil">https://pypi.python.org/pypi/psutil</a>). <br/>
+It is the total number of errors while sending.</p>
+<h3 id="status--users">Status / Users</h3>
+<h5><code>Number of user sessions</code></h5>
+<p>This metric is the evolution of the number of users logged on Vulture's application over time.</p>
+<h5><code>Bytes received over time</code></h5>
+<p>This metric is collected with <strong>psutil.net_io_counters / bytes_recv:</strong> (<a href="https://pypi.python.org/pypi/psutil">https://pypi.python.org/pypi/psutil</a>). <br/>
+It is the number of bytes per second received by Vulture on all network interfaces.
+<br/></p>
+<h2 id="rest-apis">REST APIs</h2>
+<p>You can request some Vulture metrics through REST APIs. Vulture REST APIs are available on TCP port 8000, but you need a client certificate to make a request. Such a certifiate needs to be issued from the Vulture's internal PKI <br/>.
+Here are some entry points :<br/></p>
+<p><strong> Is my Vulture node available ? </strong></p>
+<pre><code>curl --ssl -k -E &lt;client_certificate.pem&gt; https://my_node:8000/api/cluster/node/status/
+{
+    "status": true
+}</code></pre>
+<p><strong> What are the current running versions of my Vulture node ? </strong></p>
+<pre><code>curl --ssl -k -E &lt;client_certificate.pem&gt; https://my_node:8000/api/cluster/node/version/
+ {
+    "gui-version": "GUI-1.2",
+    "engine-version": "Engine-2.4.23-15"
+ }</code></pre>
+<p><strong> What are the statuses of processes running on my node ? </strong></p>
+<pre><code>curl --ssl -k -E &lt;client_certificate.pem&gt; https://my_node:8000/api/supervision/process/
+{
+    "ntpd": "UP",
+    "sshd": "UP",
+    "haproxy": "UP",
+    "rsyslogd": "UP",
+    "mongod": "UP",
+    "redis": "UP",
+    "pf": "UP",
+    "fail2ban": "DOWN",
+    "Applications": "11/11",
+    "Listeners": "3/3",
+    "App. Sessions": 1428,
+    "Portal Sessions": 22,
+    "OAuth2 Sessions": 21,
+    "Password Reset": 0,
+    "Token": 5
+}</code></pre>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

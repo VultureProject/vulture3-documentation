@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TLS profiles</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/configuration/logs.html">
+                                    Logs
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/configuration/tls.html">
+                                    TLS
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/configuration/worker.html">
+                                    Workers and HTTP/2
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/configuration/acl.html">
+                                    ACLs
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>TLS profiles</h1>
+            <h2 id="overwiew">Overwiew</h2>
+<p>Create a TLS profile to implement TLS and encrypt communication between <strong>clients</strong> and Vulture.<br/>
+This profile will be associated to a listener in the <a href="/doc/app/listener.html">application's listener panel</a>.<br/></p>
+<p><strong>Note:</strong> If you want TLS between Vulture and your <strong>web servers</strong>, this can be done directly from the <a href="/doc/app/backend.html">application's backend panel</a>.</p>
+<p><br/>
+Vulture is currently using OpenSSL, via mod_ssl, to implement TLS. Migration to GnuTLS is in progress. <br/></p>
+<h2 id="create-a-tls-profile">Create a TLS profile</h2>
+<h3 id="general-settings-and-ciphers">General settings and Ciphers</h3>
+<ul>
+<li><code>Friendly name</code>: A friendly name for the profile.</li>
+<li><code>SSL Crypto Engine</code>: Vulture identifies SSL crypto devices that are installed on your server. If nothing is found, &quot;Software engine&quot; will be used.</li>
+<li><code>X509 Certificate to use</code>: The server certificate used by Vulture. The certificate should have been created or imported before, via the <a href="/doc/management/pki.html">internal PKI</a>.</li>
+<li><code>Accepted protocols</code>: Minimum SSL/TLS version. If the client do not support this minimal version, the connexion will be refused. Consult <a href="https://httpd.apache.org/docs/current/fr/mod/mod_ssl.html#sslprotocol">mod_ssl SSLProtocol</a> documentation for details.</li>
+<li><code>Accepted ciphers</code>: Encryption and hashing algorithms that Vulture should accept or refuse(!). Consult <a href="https://httpd.apache.org/docs/current/fr/mod/mod_ssl.html#sslciphersuite">mod_ssl SSLCipherSuite</a> documentation for details.</li>
+<li>
+<p><code>Honor Cipher Order</code>: If enabled, vulture tls preferences will be proposed to the client ordered by descending security level: The first algorithm that satisfies both client and vulture will be chosen. This prevents client to force a negotiation with weak algorithms.</p>
+<blockquote>
+<p><strong>Note: If you are using HTTP/2, you MUST enable TLS into your application and use a TLSv1.2 profile</strong></p>
+</blockquote>
+</li>
+</ul>
+<p>Here is a reasonably secure SSLCipherSuite that should work with modern web browsers :</p>
+<pre><code>ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!3DES:!MD5:!PSK</code></pre>
+<h3 id="client-certificates">Client certificates</h3>
+<p>You can configure Vulture to require a valid client certificate. <br/>
+Such a certificate should be installed into the client's web browser and its Certification Authority must be the one expected by Vulture.</p>
+<p>There are several options for this feature:</p>
+<ul>
+<li><code>Not Required</code>: This is the default: No client certificate are required.</li>
+<li><code>Optional, but need to be valid</code>: The client MAY present a valid certificate, but it is not mandatory.</li>
+<li><code>Required</code> : The client MUST present a valid certificate, but it is not mandatory.</li>
+<li><code>Optional, and do not need to be valid</code> : The client MAY present a certificate and the certificate can be invalid (not trusted). <code>This should never be used.</code></li>
+</ul>
+<p>If a certificate is optional or required, you need to configure the following:</p>
+<ul>
+<li><code>Accepted CA</code>: Copy and paste PEM encoded CA certificates that you consider valid for client authentication.</li>
+<li><code>If no client certificate, redirect to</code>: If the client does not present a certificate, redirect it to the specified URI.</li>
+</ul>
+<p>Vulture automatically checks its internal CRL before accepting certificates. If you want to manage custom CRL files, you will need to copy and paste the PEM encoded CRL into the corresponding TLS server certificate used by Vulture. This can be done from the <a href="/doc/management/pki.html">PKI panel</a>.</p>
+<h3 id="ocsp">OCSP</h3>
+<p>If you want Vulture to check for CRL (Certificate Revocation List) through the OCSP protocol, you can enable <code>OCSP responder verification</code>.<br/>
+This option enables OCSP validation of the client certificate chain. <br/>
+If this option is enabled, certificates in the client's certificate chain will be validated against an OCSP responder after normal verification (including CRL checks) have taken place.<br/>
+<br/>
+The OCSP responder used is either extracted from the certificate itself, or derived by configuration
+<br/>
+See <a href="https://httpd.apache.org/docs/current/en/mod/mod_ssl.html#sslocspenable">https://httpd.apache.org/docs/current/en/mod/mod_ssl.html#sslocspenable</a> for details.</p>
+<ul>
+<li><code>Default OCSP responder</code>: This sets the default OCSP responder to use. If SSLOCSPOverrideResponder is not enabled, the URI given will be used only if no responder URI is specified in the certificate being verified.</li>
+<li><code>Override OCSP responder with default ?</code>: If set, Vulture will ignore the URI specified in the certificate being verified and will use the default responder instead.</li>
+<li><code>OCSP responder timeout</code>: This option sets the timeout for queries to OCSP responders, in seconds.</li>
+</ul>
+<h3 id="advanced">Advanced</h3>
+<p>You can specify custom modSSL directives inside the Vulture configuration:</p>
+<ul>
+<li><code>Custom mod_ssl directives for virtualhost context</code> will be placed in the application's VirtualHost context.</li>
+<li><code>Custom mod_ssl directives for application context</code> will be placed in the application's VirtualHost context, under a <strong>&lt;Location <em>/public_dir</em>&gt;</strong> section.</li>
+</ul>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

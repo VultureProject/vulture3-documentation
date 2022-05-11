@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Managing Nodes</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                    Nodes
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/services.html">
+                                    Services
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/pki.html">
+                                    PKI
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/users.html">
+                                    Users
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/reputation.html">
+                                    Reputation
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/logs.html">
+                                    Logs Viewer
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/upgrade.html">
+                                    Upgrade
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Managing Nodes</h1>
+            <h2 id="overview">Overview</h2>
+<p>From the &quot;Vulture Management / Nodes&quot; view you can manage the global Vulture Cluster:</p>
+<ul>
+<li>Add or remove nodes</li>
+<li>Switch a node from master to slave</li>
+</ul>
+<p>Vulture Cluster is based on <a href="https://docs.mongodb.com/manual/core/replica-set-architectures/">MongoDB ReplicaSet</a> to share Vulture configuration between nodes. This &quot;database&quot; is referenced in Vulture as the <code>Internal MongoDBEngine</code>. <br/>Other critical components in Vulture are <a href="https://redis.io/topics/sentinel">Redis and Sentinel</a>. <br/></p>
+<blockquote>
+<p>Communication between Vulture nodes is done through REST API calls on TCP port 8000. Communication are secured with TLS1.2 and a client certificate (/var/db/mongod/mongod.pem).<br/><br/>
+MongoDB is listening on <em>:9091
+Redis is listening on </em>:6379
+Sentinel is listening on *:26379</p>
+</blockquote>
+<h2 id="nodes-management">Nodes management</h2>
+<h3 id="nodes-list">Nodes list</h3>
+<p>This page displays the list of all nodes within the cluster and shows a number of useful informations:</p>
+<ul>
+<li><code>Name</code>: The hostname of the node. Vulture nodes use this name to contact node, so it must be resolvable.</li>
+<li><code>Engine Version</code>: Version of the Vulture Apache Engine.</li>
+<li><code>GUI Version</code>: Version of the Vulture GUI.</li>
+<li><code>Member of MongoDB ReplicaSet</code>: Indicates if the node is part of a MongoDB Replicaset, as well as the node status (PRIMARY or SECONDARY).</li>
+<li><code>Member of Redis Cluster</code>: Indicates if the node is part of a Redis Cluster, as well as the node status (MASTER or SLAVE).</li>
+</ul>
+<blockquote>
+<p>Vulture Apache Engine is a custom version of Apache httpd. It includes specific vulture modules (mod_vulture, mod_svmX...).</p>
+</blockquote>
+<p>Depending if the node status, several actions are available:</p>
+<ul>
+<li><strong>If the node is a mongoDB PRIMARY</strong> you can't do anything :-)</li>
+<li><strong>If the node is a mongoDB SECONDARY</strong> you can:
+<ul>
+<li>Promote it to PRIMARY</li>
+<li>Remove it from ReplicatSet</li>
+</ul></li>
+</ul>
+<p>When a node is removed from the Replicaset, its MongoDB Database is not synced anymore with the rest of the cluster. This can be usefull if you want to set up a new Vulture Node, with identical configuration as the cluster: Add a new node, wait for sync, remove it, remove other nodes from its configuration. And you've got a single node with the same configuration as the working cluster. <br/>
+It is good practice to remove a node from the cluster before stopping it: If you don't remove the node, remaining nodes will always try to contact it, and this slows down the GUI (there is no impact on Vulture's Apache performance for Web applications).
+<br/></p>
+<p><strong>If the node is a Redis SLAVE</strong> you can force a Redis failover to promote it as a MASTER. See <a href="https://redis.io/commands/cluster-failover">https://redis.io/commands/cluster-failover</a> <br>
+<br/>
+You can't delete a node that is either a MongoDB PRIMARY or a Redis MASTER.</p>
+<p><code>There is no data loss during MongoDB or Redis switch</code>: The cluster still works perfectly. Note that MongoDB requires 3 nodes to avoid any failure during switches. So it is not a good idea to start a Vulture cluster with only 2 nodes: If the PRIMARY crashes, the SECONDARY may not be promoted as PRIMARY and manual intervention may be required. <br/>
+<br/>
+So with Vulture it is best to have just 1 node, or at least 3. <br/></p>
+<h3 id="adding-a-node">Adding a node</h3>
+<p>When adding a node, you just need to define its hostname and click 'Save'. Once done, the node will apear as &quot;pending&quot; in the node list and a temporary key is printed on screen. This key will be required during the bootstrap process of this node: The master node won't accept the new node without a valid key.</p>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>If a node is not a member of the mongoDB Replicaset, you can follow the following procedure to manually add it to the cluster:</p>
+<pre><code>mongo –ssl –sslPEMKeyFile /var/db/mongodb/mongod.pem &lt;primary_node&gt;:9091/vulture
+rs.status()                     #This will shows the list of node inside the ReplicaSet
+rs.add("&lt;missing_node&gt;:9091")     #This will add the missing_host to the ReplicaSet</code></pre>
+<p>Replace &quot;primary_node&quot; by the IP of your primary node.<br/>
+Replace &quot;missing_node&quot; by the IP of the node you wish to add in the ReplicaSet.</p>
+<h3 id="node-properties">Node properties</h3>
+<p>When you click on a node, you will be able to edit some network attributes:</p>
+<ul>
+<li><code>Node name</code>: This is a read-only textarea, as you cannot modify the name of an existing node.</li>
+<li><code>Default IPV4 Gateway</code>: You can set here the default IPV4 gateway for the node.</li>
+<li><code>Default IPV6 Gateway</code>: You can set here the default IPV6 gateway for the node.</li>
+<li><code>Static route</code>: You may define additional static routes here.</li>
+</ul>
+<p>For static routes, refers to FreeBSD documentation when needed: <a href="https://www.freebsd.org/doc/handbook/network-routing.html">https://www.freebsd.org/doc/handbook/network-routing.html</a>.
+Here is an exemple that defines 2 static routes, one on an IPV4 interface and another on a IPv6 interface.</p>
+<pre><code>static_routes="vlan1 vlan2"
+route_vlan1="-net -inet6 fd00:1::/64 fd00:3::ffff"
+route_vlan2="-net 192.168.2.0/24 192.168.2.1"</code></pre>
+<p>The first line defines &quot;vlan1&quot; and &quot;vlan2&quot; as persistent static routes. <br/>
+Other lines set the configuration of both routes.</p>
+<p>This configuration will be stored in <code>/etc/rc.conf.local</code>. After clicking on 'Save', Vulture will perform a <code>service routing restart</code>, thus resulting in a temporary lost of existing routes for a couple of seconds.<br/>
+Avoid doing that when your are in production.</p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

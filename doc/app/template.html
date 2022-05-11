@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Portal Template</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="active">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Portal Template</h1>
+            <h2 id="overview">Overview</h2>
+<p>From this menu you can manage portal templates and media (Images) used in vulture's dialog with users. <br/>
+Portal templates are used whenever Vulture needs to interact with users <br/>
+You can create as many templates as you need, and assign them in the <a href="/doc/app/backend.html">application configuration</a> <br/>
+In a template you can configure : <br/></p>
+<ul>
+<li>The global CSS form, used by all dialogs within the template.</li>
+<li>The &quot;Login&quot; template, displayed during user authentication.</li>
+<li>The &quot;Logout&quot; template, displayed whenever a user logs out an application, if configured in <a href="/doc/app/sso_forward.html">application's config</a>.</li>
+<li>The &quot;Learning&quot; template, displayed during learning mode in <a href="/doc/app/authentication.html">HTML Authentication</a>.</li>
+<li>The &quot;Self-service&quot; template, displayed when user accesses to the <a href="/doc/authentication/self.html">self-service portal</a>.</li>
+<li>The &quot;Password&quot; template, displayed in user password change dialogs.</li>
+<li>The &quot;Email &amp; Dialogs&quot;, used when Vulture send emails (<a href="/doc/repositories/otp.html">OTP</a>) or displays status messages.</li>
+<li>The &quot;OTP&quot; template, used when Vulture prompts for <a href="/doc/repositories/otp.html">OTP</a> code.</li>
+<li>The &quot;Message&quot; template, used for various Vulture messages, such as error message.</li>
+<li>The &quot;HTML Error&quot; template, used for HTML response messages, when Error code 403-Forbidden, 404-NOT Found and 500-Server Error messages are triggered.</li>
+</ul>
+<p>You will also be able to upload images so that you can used them into HTML templates. <br/>
+<br>
+In any tab of the template interface, you may <strong>preview your work</strong> by clicking on 'Preview'.<br/>
+You can also <strong>automatically insert image link</strong>, by clicking on 'Show images' (See below).</p>
+<p>If you want to use static element, such as CSS or JS script, you will need to place them first on <em>Every vulture nodes</em>. <br/>
+The directory where to place static portal content is <code>/home/vlt-gui/vulture/portal/static/&lt;some_content&gt;</code>. <br/>
+Once done, you will be able to access this content, <code>without any access control</code> from everywhere by using an HTML link with <code>src='templates/static/&lt;some_content&gt;'</code>. <br/></p>
+<blockquote>
+<p>Note that there is no '/' at the beginning of this URI.</p>
+</blockquote>
+<h2 id="portal-templates">Portal templates</h2>
+<h3 id="global-settings">Global Settings</h3>
+<ul>
+<li><code>Friendly name</code>: A friendly name for the Portal template.</li>
+</ul>
+<h3 id="style">Style</h3>
+<p>Here you may edit a global CSS style sheet. <br/>
+This CSS will be available to every HTML templates defined below.</p>
+<h3 id="login">Login</h3>
+<p>Here you may design the HTML form displayed when Vulture prompt for authentication. <br/>
+The page will be displayed &quot;as is&quot; in the user's web browser. <br/>
+You may use the following jinja2 tags inside the HTML content:</p>
+<ul>
+<li><code>{{style}}</code>: This tag will be replaced by the CSS style sheet created previously (see above).</li>
+<li><code>{{error_message}}</code>: The error message displayed if authentication goes wrong.</li>
+<li><code>{{form_begin}}</code>: The starting &quot;&lt;form action='...'&gt;&quot;, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{form_end}}</code>: The ending &quot;&lt;/form&gt;&quot;, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{input_login}}</code>: The Login Input for authentication portal, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{input_password}}</code>: The Password Input for authentication portal, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{input_submit}}</code>: The 'login' button, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{lostPassword}}</code>: The URI for lost password.</li>
+<li><code>{{captcha}}</code>: This tag will be replaced by a captcha, if configured in application's <a href="/doc/app/authentication.html">HTML Authentication</a>.</li>
+<li><code>{{input_captcha}}</code>: The captcha text input zone.</li>
+</ul>
+<h3 id="logout">Logout</h3>
+<p>Here you can design the HTML form displayed when Vulture destroys the user session, after user clicks on the <a href="/doc/app/sso_forward.html">'disconnect URI'</a> <br/>
+The page will be displayed &quot;as is&quot; in the user's web browser. <br/>
+You may use the following jinja2 tags inside the HTML content:</p>
+<ul>
+<li><code>{{style}}</code>: This tag will be replaced by the CSS style sheet created previously (see above).</li>
+</ul>
+<h3 id="learning">Learning</h3>
+<p>Here you can design the HTML form displayed when Vulture ask for data to be <a href="/doc/app/sso_forward.html">learned</a>.
+The page will be displayed &quot;as is&quot; in the user's web browser. <br/>
+You may use the following jinja2 tags inside the HTML content:</p>
+<ul>
+<li><code>{{style}}</code>: This tag will be replaced by the CSS style sheet created previously (see above).</li>
+<li><code>{{form_begin}}</code>: The starting &quot;&lt;form action='...'&gt;&quot;, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{form_end}}</code>: The ending &quot;&lt;/form&gt;&quot;, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{input_submit}}</code>: All the input fields needed for learning, <strong>This is a mandatory tag</strong>.</li>
+</ul>
+<h3 id="self-service">Self-service</h3>
+<p>Here you can design the HTML form displayed when the user access the <a href="/doc/authentication/self.html">self-service portal</a>.
+The page will be displayed &quot;as is&quot; in the user's web browser. <br/>
+You may use the following jinja2 tags inside the HTML content:</p>
+<ul>
+<li><code>{{application_list}}</code>: A list of applications on which the user has access. Applications have the following attributes:
+<ul>
+<li><code>{{name}}</code>: The friendly name of the application.</li>
+<li><code>{{uri}}</code>: The public URI of the application.</li>
+<li><code>{{status}}</code>: Indicates whether the user has an active session on the application.</li>
+</ul></li>
+<li><code>{{style}}</code>: The Cascading Style sheet section.</li>
+<li><code>{{changePassword}}</code>: The URI to change the user's password.</li>
+<li><code>{{logout}}</code>: The URI to disconnect from all applications (full portal disconnection).</li>
+<li><code>{{username}}</code>: The name of the current logged user.</li>
+<li><code>{{error_message}}</code>: A Vulture message telling what happens during <a href="/doc/authentication/self.html">self-service portal</a> dialogs (ex: &quot;Your password has been changed&quot;, see below).</li>
+</ul>
+<h3 id="password">Password</h3>
+<p>Here you may design the HTML form displayed when the user wants to change its password. This is the same template used when the user wants to interactively change its password or when the user wants to reset his password by email (without knowing the old password). You will notice a 'If' statement in this template to handle both cases.
+The page will be displayed &quot;as is&quot; in the user's web browser. <br/>
+You may use the following jinja2 tags inside the HTML content:</p>
+<ul>
+<li><code>{{style}}</code>: The Cascading Style sheet section.</li>
+<li><code>{{form_begin}}</code>: The starting &quot;&lt;form action='...'&gt;&quot;, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{form_end}}</code>: The ending &quot;&lt;/form&gt;&quot;, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{input_password_old}}</code>: The old password input, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{input_password_1}}</code>: The new password input (#1), <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{input_password_2}}</code>: The new password input (#2), <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{input_email}}</code>: The email input, to recover password, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{input_submit}}</code>: The 'submit' button, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{dialog_change}}</code>: Boolean: True if password changes.</li>
+<li><code>{{dialog_lost}}</code>: Boolean: True if lost password..</li>
+<li><code>{{error_message}}</code>: The message telling what happened.</li>
+</ul>
+<h3 id="emails-amp-dialogs">Emails &amp; Dialogs</h3>
+<p>You can customize various messages used in Vulture's Email or error messages:</p>
+<ul>
+<li><code>Email From:</code>: The email's &quot;from&quot; address used to send Vulture's <a href="/doc/repositories/otp.html">OTP</a> email messages.</li>
+<li><code>Email Subject:</code>: The email's subject used to send Vulture's <a href="/doc/repositories/otp.html">OTP</a> email messages.</li>
+<li><code>Email Body:</code>: The email's content used to send Vulture's <a href="/doc/repositories/otp.html">OTP</a> email messages.</li>
+<li><code>'Password has been changed'</code>: The message displayed when password has been changed in the self-service.</li>
+<li><code>'Password cannot be changed'</code>: The message displayed when password cannot been changed in the self-service.</li>
+<li><code>'An email has been sent'</code>: The message displayed when a 'reset password email' has been sent.</li>
+</ul>
+<p>You may use the following jinja2 tags inside the <strong>Email body</strong> for OTP messages:</p>
+<ul>
+<li><code>{{resetLink}}</code>: The URI of the reset link for password. It will point on the Vulture's <a href="/doc/authentication/self.html">self-service portal</a>. <strong>This is a mandatory tag</strong></li>
+<li><code>{{app.name}}</code>: The name of the application from which the users want to reset their password.</li>
+<li><code>{{app.url}}</code>: The URL of the application from which the users want to reset their password.</li>
+</ul>
+<h3 id="otp">OTP</h3>
+<p>Here you can design the HTML form displayed when the user has to type in its OTP code.<br/>
+The page will be displayed &quot;as is&quot; in the user's web browser. <br/>
+You may use the following jinja2 tags inside the HTML content:</p>
+<ul>
+<li><code>{{style}}</code>: The Cascading Style sheet section.</li>
+<li><code>{{error_message}}</code>: The error message when OTP code verification goes wrong.</li>
+<li><code>{{form_begin}}</code>: The starting &quot;&lt;form action='...'&gt;&quot;, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{form_end}}</code>: The ending &quot;&lt;/form&gt;&quot;, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{input_key}}</code>: The key input, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{input_submit}}</code>: The 'login' button, <strong>This is a mandatory tag</strong>.</li>
+<li><code>{{resend_button}}</code>: The 'resend mail/sms' button.</li>
+<li><code>{{qrcode}}</code>: The 'src' html tag of the TOTP QRcode. (Only with TOTP authentication).</li>
+</ul>
+<h3 id="message">Message</h3>
+<p>This is a generic template used to display generic message, when needed by Vulture.
+The page will be displayed &quot;as is&quot; in the user's web browser. <br/>
+You may use the following jinja2 tags inside the HTML content:</p>
+<ul>
+<li><code>{{style}}</code>: The Cascading Style sheet section.</li>
+<li><code>{{message}}</code>: The message displayed by Vulture.</li>
+<li><code>{{link_redirect}}</code>: A link displayed by Vulture to go back to somewhere.</li>
+</ul>
+<h3 id="html-errors">HTML Errors</h3>
+<p>Here you can customize the HTML error messages that Vulture can display when :</p>
+<ul>
+<li>A 403 Error code is sent (ex: When Vulture denies a connection for security reasons).</li>
+<li>A 404 Error code if a resource is not found.</li>
+</ul>
+<blockquote>
+<p>Note that by default, Vulture will forward backend's error messages. <br/>
+If you want Vulture to override backed's error messages with these ones, you will need to <a href="/doc/app/backend.html">configure it</a>.</p>
+</blockquote>
+<h2 id="images">Images</h2>
+<p>From this tab you can upload Images into Vulture's MongoEngine database. Once uploaded, Image may be inserted inside above HTML templates. Just click on &quot;Show image&quot;, then select your image and its URI will be automatically copied into clipboard. <br/>
+You then only have to press CTRL+V to paste the link in your tempalte HTML FORM. Don't forget to add the &lt;img src=''&gt; tag for the image to render properly.
+<br/><br/>
+In your template, you should have something like that:</p>
+<pre><code>&lt;img src='portal_statics/fb0f91b75a87b75f6cc9851cd53432b825cc0c55'/&gt;</code></pre>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

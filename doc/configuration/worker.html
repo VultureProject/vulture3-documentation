@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Workers profiles</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/configuration/logs.html">
+                                    Logs
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/configuration/tls.html">
+                                    TLS
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/configuration/worker.html">
+                                    Workers and HTTP/2
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/configuration/acl.html">
+                                    ACLs
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Workers profiles</h1>
+            <h2 id="overview">Overview</h2>
+<p>Worker profiles are used to tune the number of process and thread Vuture will allocate for applications. Vulture is based on the <strong>Apache MPM worker</strong>. This Multi-Processing Module (MPM) implements a hybrid multi-process multi-threaded server. By using threads to serve requests, it is able to serve a large number of requests with fewer system resources than a process-based server. However, it retains much of the stability of a process-based server by keeping multiple processes available, each with many threads.</p>
+<p>The most important directives used to control this MPM are ThreadsPerChild, which controls the number of threads deployed by each child process and MaxRequestWorkers, which controls the maximum total number of threads that may be launched.
+See <a href="https://httpd.apache.org/docs/2.4/en/mod/worker.html">https://httpd.apache.org/docs/2.4/en/mod/worker.html</a> for details.</p>
+<p>By default Vulture allows a maximum of 400 clients, this is the Apache's httpd default.</p>
+<h2 id="performance-settings">Performance settings</h2>
+<ul>
+<li><code>Friendly name</code>: A friendly name for your Worker profile.</li>
+<li><code>Graceful Shutdown Timeout</code>: After a configuration change, the Apache configuration files must be reloaded. Vulture uses 'graceful restart'. This kind of restart waits that current active requests are processed, then perform the httpd restart. This can take some time if you have heavy traffic on vulture servers. This settings force a restart immediately after the given timeout, in second.</li>
+<li><code>Max Connections Per Child</code>: Do not change this setting (zero = unlimited) unless you known what you are doing or unless you experiment memory leak over time.</li>
+<li><code>Min Spare Threads</code>: Minimal number of spare threads available to handle request peaks. Default is 75.</li>
+<li><code>Max Spare Threads</code>: Maximal number of spare threads available to handle request peaks. Default is 250.</li>
+<li><code>Maximum number of processes</code>: Maximum number of processes Vulture will start for the worker. Default is 16.</li>
+<li><code>Number of threads for a child</code>: Maximum number of threads that a single process may start. Default is 25.</li>
+</ul>
+<h2 id="http2-settings">HTTP/2 settings</h2>
+<p>Vulture's HTTP/2 implementation is based on Apache mod_http2 module. <br/>
+Vulture requires TLS to enable HTTP/2: <strong>You cannot use HTTP/2 over a unencrypted connection</strong>. This is not a bug, it is a feature.<br/><br/></p>
+<p>HTTP/2 settings are defined in a httpd server context, so these settings are sets inside the worker profile.</p>
+<ul>
+<li><code>H2 Direct Mode</code>: Enable the HTTP/2 direct mode. This is a VirtualHost level directive</li>
+<li><code>Max Session Stream</code>: Maximum number of active streams per HTTP/2 session. Defaults to 100.</li>
+<li><code>Max Worker Idle Seconds</code>: Beyond this amount of time, in seconds, HTTP/2 worker will die.</li>
+<li><code>Maxixum Number of Workers</code>: Maximum number of HTTP/2 workers per process.</li>
+<li><code>MinimumNumber of Workers</code>: Minimum number of HTTP/2 workers per process.</li>
+<li><code>Modern TLS Only</code>: If enable, HTTP/2 may only be enable with TLS1.2 and secure ciphers and algorithms.</li>
+<li><code>Push Mode</code>: Enable the HTTP/2 push mode.</li>
+<li><code>Push priority</code>: HTTP/2 has the ability to push content &quot;inside&quot; the Web browser, even if the web browser do not have requested it yet. When push is enable, this setting defines the push priority for a given content-type. This is used to define which kind of content you want to push to browser, with a given priority. There are some example in the default Vulture HTTP/2 profile. Please note that directives with '#' are example and won't be processed by Apache. So remove the leading '#' to use them.</li>
+<li><code>Serialize Headers</code>: If enable, headers will be serialized like with the HTTP/1.1 format.</li>
+<li><code>Session Extra Files</code>: This directive sets maximum number of extra file handles a HTTP/2 session is allowed to use. A file handle is counted as extra when it is transferred from a h2 worker thread to the main HTTP/2 connection handling. This commonly happens when serving static files.
+Depending on the processing model configured on the server, the number of connections times number of active streams may exceed the number of file handles for the process. On the other hand, converting every file into memory bytes early results in too many buffer writes. This option helps to mitigate that.</li>
+<li><code>Stream Maximum Memory</code>: This directive sets the maximum number of outgoing data bytes buffered in memory for an active streams. This memory is not allocated per stream as such. Allocations are counted against this limit when they are about to be done. Stream processing freezes when the limit has been reached and will only continue when buffered data has been sent out to the client. Default is 65536.</li>
+<li><code>TLS Cooldown Seconds</code>: This directive sets the number of seconds of idle time on a TLS connection before the TLS write size falls back to small (~1300 bytes) length. Default is 1 seconds.</li>
+<li><code>TLS Warmup Size</code>: This directive sets the number of bytes to be sent in small TLS records (~1300 bytes) until doing maximum sized writes (16k) on https: HTTP/2 connections. Default is 1048576.</li>
+<li><code>H2 Upgrade</code>: This directive toggles the usage of the HTTP/1.1 Upgrade method for switching to HTTP/2.</li>
+<li><code>Windows size</code>: This directive sets the size of the window that is used for flow control from client to server and limits the amount of data the server has to buffer. The client will stop sending on a stream once the limit has been reached until the server announces more available space (as it has processed some of the data). Default is 65535.</li>
+</ul>
+<p>See HTTP/2 Apache directives for details: <a href="https://httpd.apache.org/docs/2.4/en/mod/mod_http2.html">https://httpd.apache.org/docs/2.4/en/mod/mod_http2.html</a>.</p>
+<h2 id="keepalive">KeepAlive</h2>
+<p>See <a href="https://httpd.apache.org/docs/2.2/fr/mod/core.html#keepalive">https://httpd.apache.org/docs/2.2/fr/mod/core.html#keepalive</a> for details.</p>
+<h2 id="bandwith">Bandwith</h2>
+<p>See <a href="https://httpd.apache.org/docs/trunk/mod/mod_ratelimit.html">https://httpd.apache.org/docs/trunk/mod/mod_ratelimit.html</a> and <a href="https://httpd.apache.org/docs/2.4/fr/mod/mod_reqtimeout.html">https://httpd.apache.org/docs/2.4/fr/mod/mod_reqtimeout.html</a> for details.</p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

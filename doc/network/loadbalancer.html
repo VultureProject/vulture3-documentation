@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Load Balancer</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/network/listener.html">
+                                    Listener
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/network/loadbalancer.html">
+                                    Load-Balancer
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/network/rewriting.html">
+                                    URL Rewriting
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/network/proxybalancer.html">
+                                    Proxy-Balancer
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/network/topology.html">
+                                    Topology
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Load Balancer</h1>
+            <h2 id="overview">Overview</h2>
+<p>Vulture uses <a href="http://www.haproxy.org">ha-proxy</a> to provide high-performance load-balancing features on <strong>incoming request</strong>. <br/>
+You can use this feature to accept incoming connexion on any TCP port and load-balance it to another server:</p>
+<ul>
+<li>Another Vulture node inside the cluster for incoming web traffic.</li>
+<li>Another server for another protocol.</li>
+</ul>
+<p><img src="/doc/img/load-balancing.png" alt="HA-Proxy Load Balancer" /></p>
+<h2 id="create-a-load-balancer">Create a load-balancer</h2>
+<p>To create an incoming load-balancer configuration, here are the required informations:</p>
+<ul>
+<li><code>Name</code>: A friendly name for the load-balancer.</li>
+<li><code>HTTP Mode</code>: Needed if the backend is a HTTP Application.</li>
+<li><code>Enable TLS</code>: Enable listening in HTTPS mode</li>
+<li><code>SSL Profile</code>: <a href="/doc/configuration/tls.html">SSL Profile</a> to use for HTTPS listening.</li>
+<li><code>Keep Alive</code>: Enable connection reuse on client/server side to provide lowest latency. See <a href="http://cbonte.github.io/haproxy-dconv/1.9/configuration.html#4-option%20http-keep-alive">documentation</a></li>
+<li><code>Sticky session</code>: In HTTP mode, ensure that a user will always be directed to the same server. This option set the directive <em>cookie SRVNAME insert</em> in Listen section, and <em>cookie [server-name]</em> in each server section.</li>
+<li><code>Incoming listener</code>: The network interface on which ha-proxy should listen.</li>
+<li><code>Incoming port</code>: The TCP port on which ha-proxy will listen (80 or 443 for example).</li>
+<li><code>Balancing mode</code>: All balancing mode of HAProxy are supported :
+<ul>
+<li><code>RoundRobin</code>: Use the servers weight to balance connections</li>
+<li><code>Least Conn</code>: The server with the lowest number of connections receives the connection</li>
+<li><code>First server</code>: The first server with available connection slots receives the connection</li>
+<li><code>Source IP based</code>: Ensures that the same client IP address will always reach the same server</li>
+<li><code>URI based</code>: Ensures that the same URI will always be directed to the same server</li>
+<li><code>URL param based</code>: This is used to track user identifiers in requests and ensure that a same user ID will always be sent to the same server))</li>
+<li><code>Header based</code>: Ensures that the same header value will always be directed to the same server</li>
+<li><code>RDP-Cookie based</code>: Makes it possible to always send the same user (or the same session ID) to the same server</li>
+<li><code>Balancing parameter</code> (optional): Parameter of balancing mode chosen, if needed.
+<blockquote>
+<p>See <a href="http://cbonte.github.io/haproxy-dconv/1.9/configuration.html#4-balance">HAProxy balance documentation</a> for more details on balancing modes.</p>
+</blockquote></li>
+</ul></li>
+</ul>
+<p><i class="fa fa-warning">&nbsp;&nbsp;</i>The HTTP Mode is needed if you need the original client's IP logged by Vulture. This mode adds a `X-Forwarded-For' header with the Client's IP address.</p>
+<p>You can fine-tune some settings to improve performance / to adapt timeout to backends:</p>
+<ul>
+<li><code>Timeout connect</code> : Maximum timeout for client to connect to Vulture, defaults to 500ms. <a href="http://cbonte.github.io/haproxy-dconv/1.9/configuration.html#4.2-timeout%20connect">HAProxy documentation</a></li>
+<li><code>Timeout server</code> : Maximum timeout for Vulture to connect to the backend, defaults to 2s. <a href="http://cbonte.github.io/haproxy-dconv/1.9/configuration.html#4.2-timeout%20server">HAProxy documentation</a></li>
+<li><code>Timeout client</code> : Maximum timeout for a client to acknowledge or send data, defaults to 5s. <a href="http://cbonte.github.io/haproxy-dconv/1.9/configuration.html#4.2-timeout%20client">HAProxy documentation</a></li>
+<li><code>Timeout tunnel</code> : Maximum timeout on client and server side for tunnels (e.g: for WebSocket tunnels). Defaults to 600s. <a href="http://cbonte.github.io/haproxy-dconv/1.9/configuration.html#4.2-timeout%20tunnel">HAProxy documentation</a></li>
+<li><code>Timeout server-fin</code> : Maximum timeout on server side for half-closed connections (usefull for example for WebSocket tunnels). Defaults to 10s. <a href="http://cbonte.github.io/haproxy-dconv/1.9/configuration.html#4.2-timeout%20server-fin">HAProxy documentation</a></li>
+<li><code>Max connections</code> : Maximum simultaneous connections, defaults to 10,000. <a href="http://cbonte.github.io/haproxy-dconv/1.9/configuration.html#maxconn">HAProxy documentation</a></li>
+</ul>
+<p>You will then need to add one or more backend to which you want to forward incoming request. <br/>
+In a cluster configuration you will want to declare here all your Vulture nodes, but you can choose any IP / port you want.<br/>
+<strong> Please not that you CANNOT select any carp IP address here </strong>
+<br/><br/></p>
+<ul>
+<li><code>Host</code> : A Friendly name for the backend</li>
+<li><code>IP</code> : IP address of the backend</li>
+<li><code>Port</code> : TCP port of the backend</li>
+<li><code>Weight</code> : An integer to ponderate load-balancing trafic. If you have 2 backends, one with a weight of &quot;1&quot; and the second with a weight of &quot;2&quot;, the second will receive twice more traffic that the first. <a href="http://cbonte.github.io/haproxy-dconv/1.9/configuration.html#5.2-weight">HAProxy documentation</a></li>
+<li><code>Tls</code>: Connect to server with HTTPS protocol</li>
+<li><code>Send-proxy</code>: Enforce the use of PROXY protocol over TCP connections to informs server about source IP addresses. <a href="http://cbonte.github.io/haproxy-dconv/1.9/configuration.html#5.2-send-proxy">HAProxy documentation</a></li>
+</ul>
+<p>For example, consider the following network diagram:<br/>
+<img src="/doc/img/load-balancing-2.png" alt="Load-Balancing-2" /> <br/>
+<br/>
+We want to load-balance incoming HTTP traffic (TCP port 80) from our CARP listener to each member of the Vulture cluster.<br/>
+Here are the parameters to create the HA-PROXY configuration:</p>
+<ul>
+<li><code>Incoming listener</code>: Your CARP Listener (192.168.1.1)</li>
+<li><code>Incoming port</code>: 80</li>
+<li><code>Backend servers (Host / IP / PORT / Weight)</code>:
+<ul>
+<li>Vulture-1 / 172.16.1.1 / 80 / 1</li>
+<li>Vulture-2 / 172.16.1.2 / 80 / 1</li>
+<li>Vulture-3 / 172.16.1.3 / 80 / 1</li>
+</ul></li>
+</ul>
+<p>In this example, all weights are set to 1. So Vulture will send the first request to vulture-1, then on vulture-2, then on vulture-3, then on vulture-1, ...
+If one of the node fails, the CARP IP address will switch to another node and load-balancing will continue on the remaining 2 nodes.</p>
+<h2 id="advanced-configuration">Advanced configuration</h2>
+<p>In this section you can write ha-proxy directives. These directives will be placed in the &quot;Listen&quot; section of ha-proxy configuration.
+See ha-proxy documentation for details.</p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

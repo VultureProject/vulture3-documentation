@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Web Application Firewall</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="active">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/waf/ruleset.html">
+                                    WAF Ruleset
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/waf/policy.html">
+                                    WAF Policy
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/waf/virtualpatching.html">
+                                    Virtual Patching
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/waf/dataset.html">
+                                    Datasets
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/waf/pf.html">
+                                    Packet Filter
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Web Application Firewall</h1>
+            <h2 id="overview">Overview</h2>
+<p>Vulture allows you to filter incoming and outgoing web trafic and block threats like injection, cross site scriping... and other attacks of the OWASP Top10.<br/>
+It is relying on mod_security, mod_defender (fork of Naxsi), and mod_svm (Machine learning based on Support Vector Machines) to filter HTTP traffic.<br/></p>
+<p>mod_security has been improved to fit Vulture's clustered design.
+mod_svm is the exclusive property of aDvens, and freely usable in Vulture.
+mod_defender is freely available under a GPLv3 licence : <a href="https://github.com/VultureProject/mod_defender">https://github.com/VultureProject/mod_defender</a></p>
+<p>All these filtering engines works together, and you don't have the complexity of managing 3 different engines: All is simplified in the Vulture GUI.
+Another cool benefit of having mod_security and mod_defender is that you can create ruleset that mix MAXSI's syntax and mod_security's syntax, depending of what you want to achieve.</p>
+<p>If a &quot;abnormal request&quot; is detected, mod_security or mod_svm or mod_defender will increment the score of the request.
+If the request score reach the maximum accepted score, Vulture will block.</p>
+<h2 id="mod-security">Mod Security</h2>
+<p>mod_security is the historical filtering engine of Vulture. See <a href="https://modsecurity.org/">https://modsecurity.org/</a> for details.
+Note that Vulture uses a modified version of mod_security: We removed the support of DBM based collection files and uses redis instead. This improve performances and allow mod_security to run in cluster mode, sharing session's data between multiple nodes.</p>
+<p>If a mod_security rule match, Vulture will increment the score of the request, as mod_svm and mod_defender do.</p>
+<h2 id="mod-svm">Mod SVM</h2>
+<h3 id="overview-1">Overview</h3>
+<p>mod_svm is an Apache module written by aDvens that implements non-supervised machine learning. It works by computing a mathematical representation of &quot;good traffic&quot; (Python code in GUI) and then, in realtime, by comparing incoming and outgoing requests against this representation.
+The realtime code is handled by mod_svm, an Apache module developed in C-language.</p>
+<p>Building the SVM (GUI side) is a long operation and needs strong CPU and RAM.
+Checking an HTTP request / response against an existing SVM (mod_svm side) if blazing fast. If a &quot;abnormal request&quot; is detected, mod_svm will increment the score of the request, as mod_security and mod_defender do.</p>
+<h3 id="mode-of-operation">Mode of operation</h3>
+<p>Mod_svm is composed of 4 modules. This modules are written in C and used the scikit-learn library proposed by the INRIA (French Institute for Research in Computer Science and Automation). <br>
+This library is by default available in Python but we have extracted the mathematical core, written in C++ to use-it in an Apache module, written in C. <br></p>
+<p>At first, the learning Dataset have to be built in the &quot;Logs&quot; view with the button &quot;Create dataset&quot;. Then, in the view &quot;Dataset&quot;, the SVMs have to be generated from the Dataset. <br>
+Finaly, they can be used by the applications in the &quot;Security&quot; tab. <br></p>
+<h3 id="building-the-svms">Building the SVMs</h3>
+<p>The 4 SVMs are bidimensional, they each use an x and an y to create a dataset (an SVM) representing the legitimate area within a 2D graphic. <br>
+For the first SVM, to create a dataset of (x and y) pairs, here is the algorithm used : <br></p>
+<pre><code>uris = list
+for each uri of logs:
+    for each piece of uri.split_by('/'):
+        uris.append( piece )
+for each piece of uris:
+    tmp_list = list
+    for each piece2 of uris:
+        tmp_list.append( levenshtein_distance(piece, piece2) )
+    x = average(tmp_list)
+    y = len( piece )
+    dataset.append( [x , y] )</code></pre>
+<p>Levenshtein distance is the number of different characters between two words. For example, between &quot;test&quot; and &quot;tent&quot; the levenshtein distance is 1. <br>
+This dataset is then used to generate an SVM with <b>sklearn</b>, more precisely an object <b>OneClassSVM</b>, which will be stocked in MongoDB, and subsequently used by Apache as <b>mod_svm2</b>.</p>
+<p>The second SVM uses the same algorithm as the last one, the only difference is that the uris are not splitted by '/'. The pseudo code of the algorithm is : <br></p>
+<pre><code>for each uri in logs:
+    tmp_list = list
+    for each uri2 in logs:
+        tmp_list.append( levenshtein_distance(uri, uri2) )
+    x = average(tmp_list)
+    y = len( uri )
+    dataset.append( [x , y] )</code></pre>
+<p>In the same way, this dataset is used to create an <b>OneClassSVM</b> object, which will be saved in MongoDB and written in Apache configuration as <b>mod_svm3</b>. <br><br></p>
+<p>The third SVM is totally different, we use the <b>HTTP status code</b> as x, and the <b>bytes received</b> (by Vulture) as y. <br>
+This list of (x and y) pairs is then used to create an <b>OneClassSVM</b> object which will be saved in MongoDB and used to generate the Apache configuration. <br><br></p>
+<p>This fourth SVM uses the <b>HTTP status code</b> as x, and the <b>ratio between bytes sent and bytes received</b> (by Vulture) as y. <br>
+This list of (x and y) pairs is then used to create an <b>OneClassSVM</b> object which will be saved in MongoDB and used to generate the Apache configuration. <br><br></p>
+<h3 id="generate-the-apache-configuration">Generate the Apache configuration</h3>
+<p>Within the C code of Apache modules, we use the C structures called &quot;svm_model&quot; and &quot;svm_parameter&quot; which have the same attributes as the python object OneClassSVM. <br>
+So, to transmit this attributes from python object to C structure, we have identified their types in C code, and we directly export the attribute if it is an int or a float, and we use the &quot;hexlify&quot; function to export tables of floats or of integers. <br></p>
+<p>Then, within the C module, we re-convert all of this directives parameters to create the structures &quot;svm_model&quot; and &quot;svm_parameter&quot; which will be used to &quot;predict&quot; each received request. <br></p>
+<p>For the svm2 and svm3 modules, we have to export the list of all the uris that were used to create the dataset, to perform the levenshtein averages. <br></p>
+<p>The four configuration files are templated as vulture_svm{2,3,4,5}.conf and used by python (jinja) to generate the files in /home/vlt-sys/Engine/conf/svm directory. They are then used in application configuration file with the Apache directive &quot;Include&quot;. <br></p>
+<h3 id="apache-modules">Apache modules</h3>
+<p>The svm2 and svm3 modules are in the <b>fixups</b> hook to retrieve and predict the requested url. <br>
+The svm4 has 3 hooks, one in <b>fixups</b> to retrieve the request length, one in <b>input_filters</b> to retrieve request body length, and one in <b>output_filters</b> to retrieve the HTTP status code response from the application.
+The prediction is then made in output_filter.
+As svm4, svm5 has the same 3 hooks, but retrieves the bytes sent from the application response and makes prediction. <br></p>
+<p>If a prediction return -1, which means that the (x and y) pair is out of the legitimate area, an environment variable is set depending on the svm. For example, if in the svm2 the prediction result is -1, the &quot;svm2&quot; environment variable is set to &quot;1&quot;. <br></p>
+<h3 id="detection-and-blocking">Detection and blocking</h3>
+<p>Because the svm2 and 3 are in fixups, we use <b>mod_security</b> to increment the anomaly score depending on svm environment variables. <br>
+For that, the following two directives are used :</p>
+<ul>
+<li>SecRule ENV:SVM2 &quot;@eq 1&quot; &quot;id:'21',t:none,pass,nolog,setvar:tx.inbound_anomaly_score=+%{tx.warning_anomaly_score},msg:'SVM 2 triggered'&quot;</li>
+<li>SecRule ENV:SVM3 &quot;@eq 1&quot; &quot;id:'22',t:none,pass,nolog,setvar:tx.inbound_anomaly_score=+%{tx.notice_anomaly_score},msg:'SVM 3 triggered'&quot;
+If the &quot;svm2&quot; environment is equal to &quot;1&quot;, the anomaly score will be incremented by the &quot;warning_anomaly_score&quot; value. <br>
+If the &quot;svm3&quot; environment is equal to &quot;1&quot;, the anomaly score will be incremented by the &quot;notice_anomaly_score&quot; value. <br>
+If a rule matches, the corresponding message will be set in the &quot;reason&quot; variable and available in access logs. And if the anomaly score reaches the threshold (set in Policy settings), a 403 HTTP response code will be sent to the client. <br>
+For the svm4 and 5, the anomaly score incrementation is made in Mod_Vulture's output filter. <br>
+If the &quot;svm4&quot; environment variable is set, the anomaly score will be increased by the &quot;warning anomaly score&quot; value, same for the &quot;svm5&quot;. <br>
+If the anomaly score reaches the threshold, a 403 HTTP response code will be sent to the client. <br></li>
+</ul>
+<h2 id="mod-defender">Mod Defender</h2>
+<h3 id="overview-2">Overview</h3>
+<p>mod_defender is a lightweight, blazing-fast and scalable web application firewall module for Apache. mod_defender is a fork of Naxsi, a WAF designed for NGINX.
+It works on a whitelist approach: By default, everything is blocked and only &quot;explicitely accepted traffic&quot; is allowed. mod_defender uses a <strong>main rules</strong> configuration files, that contains regular expressions about well-known &quot;attack pattern&quot;. When a main rule matches, the request's score is incremented. When the <strong>blocking threshold</strong> is reached, mod_defender will block the request.
+One can considers main rules as &quot;static blacklists&quot;: These rules doesn't evolve much.</p>
+<p>In addition to main rules, mod_defender uses <strong>basic rules</strong> to explicitely whitelist good requests. These rules are unique to the website to protect.
+Fortunately, they can be generated on an automatic way: mod_defender uses a &quot;&quot;<strong>learning mode</strong>&quot;: During learning, requests are not blocked: they are stored in a database (elasticsearch or mongodb) and then processed by a script that will build the basic rules.</p>
+<h3 id="mode-of-operation-1">Mode of operation</h3>
+<p>mod_defender's functionalities are broadly similar to Naxsi's ones. It uses the same format for main, basic rules and score rules (Vulture do not uses score rules, but its internal scoring system, which mix scoring from mod_security, mod_defender and mod_svm).
+This compatibility allows administrator to run tools like NXApi/nxtool to generate basic rules. When mod_defender is in learning mode, blocked requests are logged with detailed information in mongodb / elastic (GUI-1.44)</p>
+<h4 id="configuration">Configuration</h4>
+<p>mod_defender can be configured with specific <Location> blocs in Apache configuration, with the help of the following directives:</p>
+<p><code>MatchLog</code> : Path of the learning logfile. Default is /var/log/apache2/defender_match.log
+<code>JSONMatchLog</code> : Path of the learning logfile in JSON format. Default is /var/log/apache2/defender_json_match.log
+<code>RequestBodyLimit</code> : Maximum size of POST requests. Default is 128 KB.
+<code>LearningMode</code> : On/Off, enable or disable the learning mode. Enabled by default.
+<code>ExtensiveLog</code> : On/Off, enable or disable advanced learning mode (with the variable's content). Disabled by default (in Vulture, this is automatically enabled when LearningMode is enable)
+<code>LibinjectionSQL</code> : On/Off, enable of disable generic detection of SQL Injection, using Libinjection.
+<code>LibinjectionXSS</code> : On/Off, enable of disable generic detection of Cross Site Scripting, using Libinjection.
+<code>CheckRule</code>: Rules that describe maximum accepted score (automatically managed by Vulture)</p>
+<h4 id="limitation">Limitation</h4>
+<p>Unlike other WAF, mod_defender and naxsi, do not run with a signature database.
+Other specific features are:</p>
+<ul>
+<li>mod_defender only inspect GET and POST / PUT requests</li>
+<li>mod_defender only allow the following content-types: application/x-www-form-urlencoded, multipart/form-data and application/json</li>
+</ul>
+<p>Inside Vulture, unlike Naxsi, if a invalid content-type is detected, mod_defender won't block: The anomaly score will be increased instead.
+Inside Vulture we cover protection on other VERBS (like DELETE, HEAD, ...) with the help of mod_security and mod_svm.</p>
+<h4 id="advantages">Advantages</h4>
+<p>mod_defender has been developped with performance in mind. That's why its main logic is coded in C++11. Regular expression are not provided with any external libraries. Indeed &quot;C++11 regex&quot; is used inside mod_defender.
+For hash tables, mod_defender uses C++11 unordered_map, one ot the best choice among STL containers: Maximum performance and less collisions.
+mod_defender does not depend of any library, even those of Apache or NGINX. Thus, it is portable on almost any platform and may be used by other software as a reliable Web filtering engine.</p>
+<p>Specifically, we paid attention to reduce at the maximum the number of copies of each part of HTTP requests. Moreover, to improve performance, mod_defender only works in lowercase (Request are transformed in lower case first).</p>
+<p>Unlike mod_security, mod_defender threats incoming HTTP request's body in a &quot;<strong>spectator mode</strong>&quot;: Request's body is read and a copy is made for inspection purposes. Once inspection is done and if no problem is found, the original body is sent to Apache. This avoids any problem related to charset decoding that may occurs later in the processing phase.</p>
+<h4 id="blacklist">Blacklist</h4>
+<p>A main block rule uses the following format :</p>
+<pre><code>MainRule "str/rx:&lt;pattern to match&gt;" "msg:&lt;message when match&gt;" "mz:&lt;zone to inspect&gt;" "s:&lt;score to apply&gt;" id:&lt;rule number&gt;;</code></pre>
+<p><strong>pattern to match</strong>
+The pattern to match may be a regular expression (regex) or a string:</p>
+<ul>
+<li><code>rx:foo|bar</code>  : String &quot;foo&quot; of string &quot;bar&quot;</li>
+<li><code>str:foo|bar</code> : String &quot;foo|bar&quot;.</li>
+<li><code>d:libinj_sql</code> : Scan for generic SQL injection patterns, using libinjection SQL</li>
+<li><code>d:libinj_xss</code> : Scan for generic XSS injection patterns, using libinjection XSS</li>
+</ul>
+<p>Use string patterns instead of regex when possible, this is faster.
+All strings must be written in lowercase as mod_defender converts all string to lowercase before processing.</p>
+<p><strong>Message</strong>
+msg is a message that describes the rule in a comprehensive manner. This attribute is used in logs when a rule matches and thus explains the block reason.</p>
+<p><strong>Zone to inspect</strong></p>
+<p><code>mz</code> means &quot;match zone&quot;. It tells mod_defender where to look for the pattern.</p>
+<ul>
+<li><code>mz:BODY|URL|ARGS</code> means that the BODY, the URL (before the '?') and GET variables will be inspected</li>
+<li><code>mz:$HEADERS_VAR:Cookie</code> means that the rule will inspect the &quot;Cookie&quot; HTTP HEADER</li>
+<li><code>mz:$URL:/login|$ARGS_VAR:username</code> means that the GET parameter 'username' will be inspected when the request URL is '/login'</li>
+</ul>
+<p>Name and extension of files may be specified in the zone <code>FILE_EXT</code> to inspect request during a file upload.</p>
+<p><strong>Score</strong>
+<code>s</code> tells mod_defender which counter to increase, and by which amount, when the rule matches.
+A rule may increment several counter at once.</p>
+<ul>
+<li><code>s:$SQL:8</code> will add '8' to the '$SQL' counter.</li>
+<li><code>s:$SQL:4,$XSS:4</code> will add '4' to the '$SQL' counter and '4' to the '$XSS' counter.</li>
+</ul>
+<p>In the score rule, one can also use one of the following action: <code>BLOCK</code>, <code>DROP</code>, <code>ALLOW</code> or <code>LOG</code>.
+The action will be applied when the pattern matches.</p>
+<p><strong>Rule number</strong></p>
+<p><code>id</code> is the rule number which will be used by other basic rules to refer to this rule. The rule number is also present in logs when the rule matches.</p>
+<p><strong>Negation</strong></p>
+<p>It is possible to add the <code>negative</code> keyword to invert the action of the rule, so that the score will be applied if the rule do not match.</p>
+<h4 id="whitelist">Whitelist</h4>
+<p>A basic accept rule uses the following format:</p>
+<pre><code>BasicRule wl:&lt;main rules' id to disable&gt; "mz:&lt;zones to inspect&gt;"</code></pre>
+<p><strong>Main rules' id to disable</strong></p>
+<p>Tells mod_defender to deactivate blocking main rules. Main rules to deactivate are referenced by their respective ids.
+Possible syntax are :</p>
+<ul>
+<li><code>wl:1000</code> disable the rule n°1000</li>
+<li><code>wl:1000,1001,1002</code> disable rules n°1000, 1001 and 1002</li>
+<li><code>wl:-1000</code> disable all rules except rule n°1000 and internal rules</li>
+</ul>
+<p><strong>Zone to inspect</strong></p>
+<p><code>mz</code> means &quot;match zone&quot;. It tells mod_defender where to look for the pattern. Match zone is optional: If not specified, the basic rule will apply to all request's zones.
+Available match zones are :</p>
+<ul>
+<li><code>ARGS</code> : GET parameters</li>
+<li><code>$ARGS_VAR</code> : Name of a GET parameter</li>
+<li><code>$ARGS_VAR_X</code> : Regex that applies to the name of a GET parameter</li>
+<li><code>HEADERS</code> : HTTP headers</li>
+<li><code>$HEADERS_VAR</code> : Name of an HTTP header</li>
+<li><code>$HEADERS_VAR_X</code> : Regex that applies to the name of a HTTP header</li>
+<li><code>BODY</code> : BODY of a POST / PUT request</li>
+<li><code>$BODY_VAR</code> : Name of a parameter that belongs to the body of a POST / PUT request</li>
+<li><code>$BODY_VAR_X</code> : Regex that applies to the name of a parameter that belongs to the body of a POST / PUT request</li>
+<li><code>URL</code> : URL of the asked resource, before the '?'</li>
+<li><code>$URL</code> : Specific URL</li>
+<li><code>$URL_X</code> : Regex that applies to the URL</li>
+<li><code>FILE_EXT</code> : Name of the file uploaded during a multipart POST request</li>
+</ul>
+<p>A match zone may be followed by &quot;|NAME&quot;. This means that the rule will only apply on the variable's name - and not on the variable's content.
+Match zones must be written in lowercase.</p>
+<p>Here are some whitelist example rules:</p>
+<pre><code>BasicRule wl:1000;                              # Disable the rule n°1000. Match zone is empty, so this whitelisting rule will apply everywhere
+BasicRule wl:1000 "mz:$ARGS_VAR:foo";           # Disable the rule n°1000 on the GET parameter "foo"
+BasicRule wl:1000 "mz:$ARGS_VAR:foo|$URL:/bar"; # Disable the rule n°1000 on the GET parameter "foo", for the URL "/bar"
+BasicRule wl:1000 "mz:$URL:/bar|ARGS";          # Disable the rule n°1000 on all GET parameters, for the URL "/bar"
+BasicRule wl:1000 "mz:ARGS|NAME";               # Disable the rule n°1000 on all GET parameters
+BasicRule wl:1000 "mz:$ARGS_VAR_X:img";         # Disable the rule n°1000 on all GET parameters that contain "img"
+BasicRule wl:1000 "mz:$ARGS_VAR_X:^img";        # Disable the rule n°1000 on all GET parameters that begin with "img"
+BasicRule wl:1000 "mz:$ARGS_VAR_X:^img_[0-9]+$" # Disable the rule n°1000 on all GET parameters that begin with "img_&lt;and a digit from 0 to 9&gt;"</code></pre>
+<p><strong>Threshold definition</strong></p>
+<p>A threshold definition directive has the following format :</p>
+<pre><code>CheckRule "condition" &lt;Action&gt;</code></pre>
+<p>Condition is a simple comparison between a score and a constant that defines the maximum accepted score:</p>
+<ul>
+<li><code>$XSS &gt;= 8</code> checks that the overall &quot;$XSS&quot; counter is not greater that &quot;8&quot;. Accepted operators are &quot;&gt;=&quot;, &quot;&gt;&quot;, &quot;&lt;=&quot; and &quot;&lt;&quot;.</li>
+</ul>
+<p>Action is triggered when the condition is satisfied:</p>
+<ul>
+<li><code>ALLOW</code> : Accept the request</li>
+<li><code>LOG</code> : Log the request</li>
+<li><code>BLOCK</code> : Block the request (403 forbidden)</li>
+<li><code>DROP</code> : Log the request during learning mode, and block otherwise</li>
+</ul>
+<p><strong>Logs</strong></p>
+<p>An entry in log files (or elasticsearch / mongodb in Vulture) is added whenever a request breaches a rule.
+A Log entry contains details that helps administrators to identify false-positives:</p>
+<pre><code>&lt;date&gt; [error] &lt;PID&gt;#&lt;TID&gt;: *&lt;connection_id&gt;ip=&lt;client_ip&gt;&amp;server=&lt;server_ip&gt;&amp;uri=&lt;request_uri&gt;&amp;block=&lt;0 or 1&gt;&amp;cscore=&lt;score_name&gt;&amp;score=&lt;score_value&gt;&amp;zone=&lt;zone to inspect&gt;&amp;id=&lt;rule number&gt;&amp;var_name=&lt;name of the variable that contains malicious data&gt;</code></pre>
+<ul>
+<li><code>&lt;date&gt;</code> : The datetime of the request</li>
+<li><code>&lt;PID&gt;</code>: The apache process ID</li>
+<li><code>&lt;TID&gt;</code>= The identifier of the execution thread</li>
+<li><code>&lt;connection_id&gt;</code>: The unique identifier of the connection</li>
+<li><code>ip</code>: The IP address of the client</li>
+<li><code>server</code>: The IP address of the server</li>
+<li><code>uri</code>: The URI of the request</li>
+<li><code>block</code>: Tells if the request is allowed or blocked</li>
+<li><code>cscore</code>: The different scores</li>
+<li><code>score</code>: The different scores values</li>
+<li><code>zone</code>: The zone in which was the anomaly detected</li>
+<li><code>id</code>: id of the matched rule</li>
+<li>
+<p><code>var_name</code>: Name of the variable that contained the malicious data</p>
+</li>
+<li>Extended logs</li>
+</ul>
+<p>If this option is enabled in mod_defender engine (see before), then the content of the variables will be logged during learning mode.
+This is enabled by default in Vulture when learning mode is enable.</p>
+<ul>
+<li>JSON logs</li>
+</ul>
+<p>Unlike Naxsi, mod_defender allows to natively logs into a JSON Format. This simplifies logs processing by third party tools and uses less storage.</p>
+<h4 id="libinjection">Libinjection</h4>
+<p>libinjection is part of mod_defender. It is a C library that detect SQL and XSS injection.
+When enabled, libinjection will act as a blocking rule when an SQL (rule n°17) or XSS (rule n°18) attack is detected. When triggered, LIBINJECTION_SQL or LIBINJECTION_XSS score is incremented by &quot;8&quot;.
+By default, libinjection is disabled in mod_defender and must be explicitly activated in the configuration file.</p>
+<h4 id="internal-rules">Internal rules</h4>
+<p>mod_defender contains a predefined core ruleset :</p>
+<ul>
+<li>n°2 - <code>big request</code> : Request to big (too much data in request)</li>
+<li>n°10 - <code>uncommon hex encoding</code> : Encoding of the request is likely to be related to an attack</li>
+<li>n°11 - <code>uncommon content-type</code> : The content-type of the request is unknown or not supported</li>
+<li>n°12 - <code>uncommon URL</code> : The URL is malformed</li>
+<li>n°13 - <code>uncommon post format</code> : The disposition of parameters within the request is not correct</li>
+<li>n°14 - <code>uncommon post boundary</code> : Boundaries between request parameters are malformed</li>
+<li>n°15 - <code>invalid JSON</code> : JSON contained in the request body is malformed</li>
+<li>n°16 - <code>Empty post body</code> : The POST request has an empty BODY</li>
+<li>n°17 - <code>Libinjection SQL</code> : Libinjection SQL detects an SQL injection attempt</li>
+<li>n°18 - <code>Libinjection XSS</code> : Libinjection XSS detects an Cross Site Scripting attempt</li>
+</ul>
+<p>mod_defender comes by default with the same &quot;main rules&quot; as Naxsi's one. These rules must always been enabled.
+They are ordered as the following :</p>
+<ul>
+<li>n°1000 à 1099 : Rules related to SQL injection</li>
+<li>n°1100 à 1199 : Rules related to remote file inclusion (RFI)</li>
+<li>n°1200 à 1299 : Rules related to attack on path (Directory Traversal)</li>
+<li>n°1300 à 1399 : Rules related to XSS attacks</li>
+<li>n°1400 à 1499 : Rules related to XSS filter evasion</li>
+<li>n°1500 à 1599 : Rules related to file upload</li>
+</ul>
+<h4 id="nxapinxtool">NXApi/NXTool</h4>
+<p>NXApi is a tool developed by NBS System. This tool performs the following task :</p>
+<ul>
+<li>Read mod_defender logfiles on disk and send logs in elasticsearch (this is useless in Vulture, because mod_defender learning logs are natively send to elasticsearch / mongodb since GUI-1.44).</li>
+<li>Automaticaly Build whitelist (basic rules) after analysis of learning logs. This is done with a statistical approach.</li>
+<li>Allow the admin to select log entries that need to be ignored or taken into account when generating whitelists</li>
+<li>Display informations about imported learning logs</li>
+</ul>
+<p>As a best practice, it is recommanded to enable learning mode during a test phase on a given application.
+This ensures that no attacks will be recorded and so it limits the amount of work needed to eliminate false-negative (whitelisting of an attack).</p>
+<h3 id="unit-testing-and-benchmark-of-mod_defender">Unit testing and benchmark of mod_defender</h3>
+<p>In order to test mod_defender, we write up a bash script, to test every main rules:</p>
+<p><img src="/doc/img/waf-fig-1.png" alt="WAF-FIG-1" /></p>
+<p><strong>Requests flow</strong></p>
+<p>When mod_defender enters into production mode, it scores every request. Depending of the whitelist basic rules, the request may be accepted or rejected.
+The following figure shows how each request is processed by mod_defender. First, it is inspected to detect the presence of dangerous characters and SQL keywords. Then, the score is computed and verified against the maximum score threshold.
+Depending of the resulting score, the request if allowed or rejected (HTTP 403 - FORBIDDEN):</p>
+<p><img src="/doc/img/waf-fig-2.png" alt="WAF-FIG-2" /></p>
+<p><strong>Whitelist and basic rules</strong></p>
+<p>As stated before, mod_defender uses a default blacklist (main rules). However, whitelists are more extensible / configurable and should be created for every app to protect.
+At startup, mod_defender builds up to 4 hash tables, one for each zone:</p>
+<p><img src="/doc/img/waf-fig-3.png" alt="WAF-FIG-3" /></p>
+<ul>
+<li>ARGS contains GET parameters</li>
+<li>URL contains the URL of the requested resource</li>
+<li>BODY contains POST parameters</li>
+<li>HEADER contains incoming HTTP headers</li>
+</ul>
+<p>As before, once a request is allowed, it is processed and divided into 4 parts: one for each zone (ARGS, URL, BODY, HEADERS). Each table has a variable number of elements and is processed separately. Every parameter is inspected to detect the presence of suspicious part. Moreover, the current parameter is looked for in the corresponding hash table of the zone in order to find if it is whitelisted or not. If no whitelist rule is found, the score of the main rule is applied.
+Once all parts have been processed, a global verification of SQL, RFI, TRAVERSAL and XSS score is performed to check if they are below the maximum accepted threshold.</p>
+<p><img src="/doc/img/waf-fig-4.png" alt="WAF-FIG-4" />
+This approach shows that rules are processed in an efficient manner. By creating hash tables with whitelist, the search phase is done in a constant time. Moreover, since the request is divided into 4 parts, parameter processing is done separately.
+This permit to consult hash tables only when needed. For instance, if a request contains several parameter in its URL, but only one is suspicious, each parameter is compared to the main rules (blacklist), but only the suspicious one will be analyzed later.</p>
+<h2 id="testing-protocol">Testing protocol</h2>
+<p>This section describes the method and tools used to measure mod_defender's performances.</p>
+<h3 id="testing-platform">Testing platform</h3>
+<p><img src="/doc/img/waf-fig-5.png" alt="WAF-FIG-5" /></p>
+<p>Hosts are connected to the same LAN segment on a dedicated Ethernet switch.
+The test host (192.168.0.1) represents a Web user, external to the architecture. Performance tools are installed on this host.</p>
+<p>The reverse-proxy host (192.168.0.1) filters traffic between the test machine and the Web backend.
+A first series of test has been performed with <strong>Apache + mod_defender</strong> then with <strong>Apache + mod_security</strong>, then with <strong>nginx + naxsi</strong></p>
+<p>Used versions are:</p>
+<ul>
+<li>Apache 2.4.25 mpm_worker with mod_proxy, mod_proxy_http, mod_defender / mod_security</li>
+<li>Nginx 1.13 with Naxsi 0.55.3.</li>
+</ul>
+<p>WAF has been configured with almost identical policies and ruleset.
+Apache configuration is :</p>
+<pre><code>&lt;VirtualHost *:80&gt;
+    ProxyPreserveHost On
+    ProxyRequests On
+    ProxyPass / http://192.168.0.3/
+    ProxyPassReverse / http://192.168.0.3/
+&lt;/VirtualHost&gt;</code></pre>
+<p>Access Log are disabled in order to have the maximum performance (no disk i/o).</p>
+<p>The Web backend (192.168.0.3) is a classical LAMP server with phpBB.
+Tests have been made</p>
+<ol>
+<li>Without the PHP stack (the backend immediately returns 200 - OK)</li>
+<li>With the PHP stack (access to phpBB forum)</li>
+</ol>
+<p>The Web backend is twice as much performant (CPU and RAM) than the reverse-proxy host, so that we can be sure that the limiting component is the reverse-proxy and not the web backend.</p>
+<h3 id="benchmark-and-performance-measurement">Benchmark and performance measurement</h3>
+<p><strong>Apache Bench</strong>
+We use a perl script to increase the number of parameters in the URL and also to compute the average number of requests per second that the reverse-proxy is able to deal with.</p>
+<p><strong>Httperf/Autobench</strong></p>
+<p>We used autobench to compute the maximum number of simultaneous connexions that the reverse-proxy can handle.</p>
+<p>Requests against phpBB with no forbidden parameters:</p>
+<p><img src="/doc/img/waf-fig-6.png" alt="WAF-FIG-6" /></p>
+<p>Requests against phpBB with forbidden parameters (web attacks):</p>
+<p><img src="/doc/img/waf-fig-7.png" alt="WAF-FIG-7" /></p>
+<p>Requests against the &quot;200 - OK&quot; backend with no forbidden parameters :</p>
+<p><img src="/doc/img/waf-fig-8.png" alt="WAF-FIG-8" /></p>
+<p>Requests against the &quot;200 - OK&quot; backend with forbidden parameters (web attacks):</p>
+<p><img src="/doc/img/waf-fig-9.png" alt="WAF-FIG-9" /></p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

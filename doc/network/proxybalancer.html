@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Proxy Balancer</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/network/listener.html">
+                                    Listener
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/network/loadbalancer.html">
+                                    Load-Balancer
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/network/rewriting.html">
+                                    URL Rewriting
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/network/proxybalancer.html">
+                                    Proxy-Balancer
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/network/topology.html">
+                                    Topology
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Proxy Balancer</h1>
+            <h2 id="overview">Overview</h2>
+<p>Sometimes a web application runs on multiple web servers, to improve performance and availability. <br/>
+Vulture can load-balance incoming HTTP requests to multiple web backends: <br/>
+<br/>
+<img src="/doc/img/proxy-balancing.png" alt="Proxy load-balancer" />
+<br/>
+Unlike <a href="/doc/network/loadbalancer.html">load-balancer</a>, Proxy balancer works in layer 7 on HTTP protocol. <br/>
+You can combine both incoming TCP load-balancer and Proxy balancer to have powerful multi-layered load-balancing.</p>
+<h2 id="create-a-proxy-balancer">Create a proxy balancer</h2>
+<ul>
+<li><code>Friendly name</code> : A friendly name for the proxy balancer.</li>
+<li><code>Load-balancing method</code> : HTTP Load-balancing algorithm.
+<ul>
+<li>By backend busyness : A new request is sent to the backend with the smallest number of requests.</li>
+<li>By heartbeat : A new request is sent to the backend with the best average response time.</li>
+<li>By backend requests : Requests are distributed on each backend, by request count.</li>
+<li>By traffic : Requests are distributed on each backend, by request size.</li>
+</ul></li>
+<li><code>Sticky session</code> : Once a first request, for a given user, has been sent to a backend, you may want to serve other requests to the same backend. Specify here the <strong>name of the cookie</strong> used to track the user backend. This cookie must been set by the backend itself and must contain the route (usually appended to session id).</li>
+<li><code>Sticky session separator</code> : If the backend route is not inside an dedicated cookie, but part as a session cookie for example (sessionid=aff4213.route_1), specify here the character used as a separator (&quot;.&quot; in our example). Set to 'Off' if no separator is used.</li>
+<li><code>Expert config</code> : You can pass custom directive for Proxy Balancer. They will be passed to the apache <code>Proxyset</code> directive, inside a &quot;&quot;&lt;Proxy balancer://XXXXX&gt;&quot; section.</li>
+</ul>
+<p>For details, see <a href="https://httpd.apache.org/docs/2.4/fr/mod/mod_proxy_balancer.html">https://httpd.apache.org/docs/2.4/fr/mod/mod_proxy_balancer.html</a>.</p>
+<p>Then, we need to add HTTP backend to balance traffic to:</p>
+<ul>
+<li><code>Backend Type</code> : Choose the URL scheme of the backend</li>
+<li><code>IP Address</code> : IP address of the backend</li>
+<li><code>Disable reuse</code> : This parameter should be used when you want to force mod_proxy to immediately close a connection to the backend after being used, and thus, disable its persistent connection and pool for that backend. This helps in various situations where a firewall between Apache httpd and the backend server (regardless of protocol) tends to silently drop connections or when backends themselves may be under round- robin DNS. To disable connection pooling reuse, set this property value to On.</li>
+<li><code>KeepAlive</code> : This parameter should be used when you have a firewall between your Apache httpd and the backend server, which tends to drop inactive connections. This flag will tell the Operating System to send KEEP_ALIVE messages on inactive connections and thus prevent the firewall from dropping the connection. To enable keepalive, set this property value to On.</li>
+<li><code>Group ID</code> : Integer that represent the group ID of your backend. Vulture will first try all members of the group with the smallest group ID, then will try another group ID.</li>
+<li><code>Retry</code> : Connection pool worker retry timeout in seconds. If the connection pool worker to the backend server is in the error state, Apache httpd will not forward any requests to that server until the timeout expires. This enables to shut down the backend server for maintenance and bring it back online later. A value of 0 means always retry workers in an error state with no timeout.</li>
+<li><code>Route</code> : Value of the sticky session associated to the backend, as found in the sticky session cookie.</li>
+<li><code>Timeout</code> : Connection timeout in seconds. The number of seconds Apache httpd waits for data sent by / to the backend.</li>
+<li><code>TTL</code> : Time to live for inactive connections and associated connection pool entries, in seconds. Once reaching this limit, a connection will not be used again; it will be closed at some later time.</li>
+<li><code>Expert Config</code> : Custom directives, directtly appended in the httpd's <strong>BalancerMember</strong> directive</li>
+</ul>
+<p>For details, see <a href="https://httpd.apache.org/docs/2.4/fr/mod/mod_proxy_balancer.html">https://httpd.apache.org/docs/2.4/fr/mod/mod_proxy_balancer.html</a></p>
+<p>Once your proxy balancer is created, you can choose it as backend in the <a href="/doc/app/backend.html">Private URI</a> settings of your application.</p>
+<h2 id="i-want-sticky-session-but-my-backend-do-not-have-a-quotrouting-cookiequot">I want sticky session but my backend do not have a &quot;routing cookie&quot;</h2>
+<p>If you want stickysession, but your backend servers do not set COOKIE for routing, you can create it from Vulture. <br/>
+Here is the howto:</p>
+<ol>
+<li><strong>Create the following Cookie in vulture application's configuration</strong> (See <a href="/doc/app/response_headers.html">how to add a response Cookie</a>)
+<ul>
+<li>Action: Add the header</li>
+<li>Header name: ROUTEID</li>
+<li>Matching pattern: .%{BALANCER_WORKER_ROUTE}e (do not forget the '.')</li>
+<li>Condition: &quot;If env. variable exists&quot; =&gt; BALANCER_ROUTE_CHANGED</li>
+</ul></li>
+<li><strong>Use &quot;ROUTEID&quot; as Sticky session name</strong></li>
+<li><strong>Use &quot;.&quot; as Sticky session separator</strong></li>
+<li><strong>Create balancer members (see below) with &quot;1&quot;, &quot;2&quot;, &quot;3&quot;... as route value</strong></li>
+</ol>
+<p>This will result in the following configuration in Vulture's worker configuration files:</p>
+<pre><code>Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
+&lt;Proxy "balancer://mycluster"&gt;
+    BalancerMember "http://192.168.1.50:80" route=1
+    BalancerMember "http://192.168.1.51:80" route=2
+    ProxySet stickysession=ROUTEID
+&lt;/Proxy&gt;</code></pre>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

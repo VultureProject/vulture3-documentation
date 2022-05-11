@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Installation guide</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                    Installation
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/install/security.html">
+                                    Security
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Installation guide</h1>
+            <h2 id="prerequisites">Prerequisites</h2>
+<p>You need to have a fully functional Vulture-OS system, installed either with the OVA/ESX image or with the Vulture install script (See: <a href="/doc/getting-started.html">Getting Started</a>).
+<br/><br/>Once you've got Vulture-OS running, log in as 'vlt-adm'. <strong>WARNING</strong>: vlt-adm account do not have any password at this stage. A &quot;secure&quot; random password will be generated during the bootstrap process (see below).</p>
+<p><code>AFTER INSTALLATION, PLEASE READ the Hardening GUIDE</code> and <strong>adjust <a href="/doc/install/security.html">pf firewall configuration</a> as it is permissive by default !</strong></p>
+<h2 id="bootstraping-vulture">Bootstraping Vulture</h2>
+<p>During this step, Vulture will be downloaded and installed on top of Vulture-OS.</p>
+<h4 id="prerequisites-1">Prerequisites</h4>
+<p>Vulture requires an Internet connection to download FreeBSD &amp; Vulture's updates. You can use an HTTP Proxy if needed. <br/>
+Please note that the VultureProject website is not (yet) IPv6 ready - So you will have to use an IPv6 enabled HTTP Proxy if you want to bootstrap Vulture from an IPv6 network. <br/>
+<br/></p>
+<h4 id="lets-go-">Let's go !</h4>
+<p>Launch the bootstrap process with <code>sudo /home/vlt-gui/env/bin/python /var/bootstrap/bootstrap.py</code>. <br/>
+You can also use a config file to bootstrap Vulture. This file is located at: /var/bootstrap/vulture_conf.json <br/>
+vulture_conf.json:</p>
+<pre style="font-size: 12px;line-height: 15px;">
+{
+    "ready"          : "",          <span style="color:red;">Y</span>
+    "confirm_license": "",          <span style="color:red;">OK</span>
+    "keymap"         : "",          <span style="color:red;">ex: fr.iso.acc.kbd</span>
+    "hostname"       : "",          <span style="color:red;">Hostname of the node</span>
+    "proxy"          : "",          <span style="color:red;">If proxy, set the url (without http/https://)</span>
+    "interface"      : 0,           <span style="color:red;">Interface to configure (0, 1, 2)</span>
+    "ipv4_configure" : "",          <span style="color:red;">Configure IPv4 ? Y/N</span>
+    "ipv4_dhcp"      : "",          <span style="color:red;">IPv4 DHCP Y/N</span>
+    "ipv6_configure" : "",          <span style="color:red;">Configure IPv6 ? Y/N</span>
+    "network_configuration": {
+        "inet"      : "",           <span style="color:red;">IPv4 Address</span>
+        "netmask"   : "",           <span style="color:red;">IPv4 Netmask</span>
+        "gateway"   : "",           <span style="color:red;">IPv4 Gateway</span>
+        "nameserver": "",           <span style="color:red;">DNS Nameserver</span>
+        "inet6"     : "",           <span style="color:red;">IPv6 Address</span>
+        "gateway6"  : ""            <span style="color:red;">IPv6 Gateway</span>
+    },
+    "ntp"           : "",           <span style="color:red;">NTP (default, blank)</span>
+    "vulture_config": 0,            <span style="color:red;">0: Master Node; 1: Node</span>
+    "node_config"   : {
+        "primary_hostname": "",     <span style="color:red;">Primary hostname of the cluster</span>
+        "primary_ip"      : "",     <span style="color:red;">Primary IP address</span>
+        "cluster_password": ""      <span style="color:red;">Node password to join cluster</span>
+    },
+    "email_address"   : "",         <span style="color:red;">Email address for registration key</span>
+    "registration_key": "",         <span style="color:red;">Registration key: will not be used.</span>
+
+    "pki"    : {                    <span>Ex:</span>
+        "country"          : "",    <span style="color:red;">FR</span>
+        "state"            : "",    <span style="color:red;">France</span>
+        "city"             : "",    <span style="color:red;">Lille</span>
+        "organization"     : "",    <span style="color:red;">VultureProject</span>
+        "organization_unit": ""     <span style="color:red;">VultureProject</span>
+    },
+    "admin": {
+        "username"  : "",           <span style="color:red;">admin</span>
+        "password"  : "",           <span style="color:red;">*******</span>
+        "repassword": ""            <span style="color:red;">*******</span>
+    }
+}
+</pre>
+<p>All value are optional. If a value is not filled, the bootstrap will ask you the value.<br:>
+To launch the bootstrap with the configuration file:<br/>
+<code>/var/bootstrap/bootstrap.py --config /var/bootstrap/vulture_conf.json</code></p>
+<p><br/>
+During the process Vulture will configure the system and install Vulture <br/>
+You will be guided through several steps:</p>
+<ul>
+<li>Keyboard configuration</li>
+<li>Network and proxy configuration</li>
+<li>Choice of the installation mode:
+<ul>
+<li>Create a new Vulture cluster</li>
+<li>Join an existing one</li>
+</ul></li>
+<li>Vulture registration (a valid email address is required to receive an activation code)</li>
+<li>Vulture Downloading</li>
+<li>Internal PKI initialization</li>
+<li>&quot;GUI admin&quot; user &amp; password definition</li>
+<li>&quot;vlt-adm&quot; password randomization</li>
+<li>Start of Vulture processes</li>
+</ul>
+<p><br/>
+Installation process can take several minutes, depending of your internet connection speed. <br/>
+Be careful during PKI initialization: <code>The country field needs to be on 2 characters, "FR" for example</code>. <br/>
+<br/></p>
+<ul>
+<li><strong>IMPORTANT</strong>: If you are using ZFS as filesystem, you need to add zfs_enable=&quot;YES&quot; in /etc/rc.conf</li>
+<li><strong>IMPORTANT</strong>: Vulture needs to be rebooted after bootstrap
+<br/><br/></li>
+</ul>
+<p>When everything is good, Vulture GUI should be accessible at <a href="https://your_ip_adress:8000">https://your_ip_adress:8000</a>.
+<br/>
+<br/>
+The <code>root</code> account is not allowed to login over SSH. Please <code>log in with 'vlt-adm'</code> and become root with <code>sudo csh</code> when needed. During normal operation, SSH or console access is not needed, as a lot of things are available through the Vulture GUI. <br/>
+<br/></p>
+<h2 id="vulture-gui">Vulture GUI</h2>
+<p>Vulture is fully manageable from the Web GUI. It is listening on TCP port 8000 by default. <br/>
+Vulture GUI requires a TLSv1.1 compatible web browser. Best experience with Firefox! <br/>
+<br/>
+You can login into the GUI with the username and password defined during the bootstrap process: <br/></p>
+<p><img src="/doc/img/login.png" alt="Vulture GUI" /></p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

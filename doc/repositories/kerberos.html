@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kerberos repository</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/ldap.html">
+                                    LDAP / AD
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/repositories/kerberos.html">
+                                    Kerberos
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/radius.html">
+                                    Radius
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/sql.html">
+                                    SQL
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/syslog.html">
+                                    Syslog
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/mongodb.html">
+                                    MongoDB
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/elastic.html">
+                                    Elasticsearch
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/otp.html">
+                                    OTP
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Kerberos repository</h1>
+            <h2 id="overview">Overview</h2>
+<p>A Kerberos repository is used to authenticate and identify users in a domain. It is thus possible to manage access to the services of a domain via tickets delivered by the KDC ( Kerberos Domain Controller) to the users of this domain after authentication.</p>
+<h2 id="about-kerberos">About Kerberos</h2>
+<p>The Kerberos authentication protocol is responsible for authenticating, authorizing and monitoring users who want to access resources and network services.
+Kerberos also introduces the Single Sign-On (SSO) principle, and with single-user authentication the user will have access to network services requiring Kerberos identification.</p>
+<h2 id="requirements">Requirements</h2>
+<p>In order to properly configure a Kerberos authentication repository, it is first necessary to have:</p>
+<ul>
+<li>A Kerberos server,</li>
+<li>A Kerberos &quot;service&quot;, allowing to contact the KDC (Kerberos Domain Controler) to verify the validity of the tickets provided to Vulture,</li>
+<li>The &quot;keytab&quot; of this service, allowing to authenticate this one with the KDC without having to type a password.</li>
+</ul>
+<p>WARNING: The service used by Vulture to contact the KDC should be of the following form:
+<code>HTTP/&lt;machine_name&gt;.&lt;domain&gt;@&lt;REALM&gt;</code>. For example, for the Vulture machine with hostname &quot;vulture.testing.tr&quot;, belonging to the &quot;TESTING.TR&quot; realm, the service to be created in the KDC should be:</p>
+<pre><code>HTTP/vulture.testing.tr@TESTING.TR</code></pre>
+<p>In addition, to test the validity of the keytab, it is recommended to use the following command:
+<code>kinit -k -t &lt;keytab&gt; &lt;service&gt;</code> from another machine in the realm on which the configuration is correct.</p>
+<h2 id="adding-a-kerberos-repository">Adding a kerberos repository</h2>
+<p>To add a Kerberos repository, go to the &quot;Repository&quot; section, then &quot;Kerberos&quot;. Once on the page, click on &quot;Add an entry&quot;.</p>
+<h2 id="configuration-of-the-repository">Configuration of the repository</h2>
+<ul>
+<li><code>Repository name</code>: The name for the repository. This name will be used elsewhere in GUI interfaces.</li>
+<li><code>Kerberos realm</code>: Kerberos realm of users to authenticate / identify.</li>
+<li><code>Kerberos domain realm</code>: Domain of the kingdom Kerberos.</li>
+<li><code>KDCs</code>: List of Kerberos Domain Controler (s) for this domain.</li>
+<li><code>Admin server</code>: The host on which the kerberos authentication service (AS) is launched.</li>
+<li><code>KRB5 service name</code>: Service used by Vulture to contact the KDC and check the tickets.</li>
+<li><code>Service keytab</code>: Keytab associated with this service.</li>
+</ul>
+<p>Note :</p>
+<ol>
+<li>Unlike other repositories, it is possible to save it without testing the connection. Indeed, the Kerberos configuration is generated during the saving, so if you still want to test the connection, it will have to be saved, then re-edited and tested.</li>
+<li>In addition, during saving, the keytab is tested against the entered configuration; It is not possible to import an invalid keytab.</li>
+</ol>
+<h2 id="troubleshooting-connections">Troubleshooting Connections</h2>
+<p>In case that connection problems occur, several elements should be checked:</p>
+<ul>
+<li>The logs, especially the files present in <code>/var/log/Vulture/gui/</code>, are the first thing to check when registering the repository.</li>
+<li>Since the <code>/etc/krb5.conf</code> file is automatically generated by the GUI, it seems relevant to check its contents.</li>
+<li>The keytab, normally imported into the <code>/etc/krb5.keytab</code> file, should be checked using the following command:
+<code>kinit -k -t /etc/krb5.keytab HTTP/&lt;service&gt;@&lt;REALM&gt;</code> replacing with the service entered in the GUI.</li>
+</ul>
+<p>If these three steps are correct, it is quite possible that the problem arises from the configuration of the KDC, or the service in the KDC, or even the keytab in the KDC.</p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

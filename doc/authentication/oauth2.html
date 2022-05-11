@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>OAuth2 responder</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/monitoring/general.html">
+                                    Monitoring
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/monitoring/diagnostic.html">
+                                    Diagnostic
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/authentication/self.html">
+                                    Self-service
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/authentication/oauth2.html">
+                                    OAuth2 responder
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/authentication/ml.html">
+                                    Anomaly detection
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>OAuth2 responder</h1>
+            <h2 id="overview">Overview</h2>
+<p>Vulture provides an internal OAuth2 responder that can be used with any authentication backend of type MongoDB, SQL, and LDAP.<br/>
+To enable OAuth2 responder, simply activate the checkbox in the backend's configuration. <br/>
+<br/></p>
+<p>Here are the available options:</p>
+<ul>
+<li><code>Get Oauth2 scopes from these columns</code> : Additional backend's fields to return as a scope in the oauth2 token.</li>
+<li><code>Form of returned values</code> : How to return the scope attributes: As a list (value,value,...) or as a dictionary (key=value).</li>
+<li><code>Place of returned token</code> : How to return the scope: As JSON response, HTTP header or both.</li>
+<li><code>Token time to live</code> : The oauth2 token lifetime.</li>
+</ul>
+<p><em>Note</em>: If you don't enable OAuth2 scope, it is still possible to obtain an oauth2 token, but no custom attribute will be returned.</p>
+<h2 id="obtain-a-token">Obtain a token</h2>
+<p>You can obtain an authentication token from Vulture using the following HTTP <em>POST</em> request :</p>
+<ul>
+<li>URI: <code>http(s)://&lt;vultureIP:Port&gt;/&lt;Public_token_name&gt;/portal/oauth2/login</code></li>
+<li>POST DATA: username=xxx&amp;password=xxx&amp;app_id=xxx</li>
+</ul>
+<p>Public_token_name is configurable from <a href="/doc/management/services.html">&quot;Services / Vulture setting&quot;</a>
+app_id is the application's id of your app. You can find it in the GUI.</p>
+<p>If authentication succeeds, you will get an HTTP response with an authentication token. <br/>
+Depending of the Oauth2 repository configuration (.See below), the token may be returned: <br/></p>
+<ul>
+<li>In a 'Authorization' HTTP header</li>
+<li>In a JSON response.</li>
+<li>In a JSON response + 'Authorization HTTP header'.</li>
+</ul>
+<p>The JSON token is with the following format: &quot;485285e1-a4d2-4a5c-a012-12ca6d5fec1b&quot;</p>
+<p>There are two causes of failure:</p>
+<ul>
+<li>OAuth2 responder is not enabled in the repository configuration ('OAuth2 tab'). You will receive a 403-FORBIDDEN.</li>
+<li>Login / password are invalid: You will receive a 403-FORBIDDEN.</li>
+</ul>
+<h2 id="check-the-validity-of-a-token-and-retrieve-user-scope">Check the validity of a token and retrieve user' scope</h2>
+<p>Once you have a valid token, you can check if it's valid with the following HTTP <em>POST</em> request:</p>
+<ul>
+<li>URI: <code>http(s)://&lt;vultureIP:Port&gt;/&lt;Public_token_name&gt;/portal/oauth2/token</code></li>
+<li>POST DATA: token=xxx</li>
+</ul>
+<p>If the token is not valid, you will receive the following JSON response: <code>{"active": "false"}</code>. <br/>
+If the token is valid, you will receive the following JSON response:</p>
+<pre><code>{
+    "active": "true",
+    "scope": {
+        'dn': 'uid=john_doe,ou=jdoe,ou=Users,dc=mycompany,dc=com',
+        'cn': [' john.doe'],
+        'memberOf': ['cn=group1', 'cn=group2'],
+        'user_phone': 0122334455,
+        'user_groups': ['cn=group1,ou=Policy,dc=mycompany,dc=com', 'cn=group2,ou=Policy,dc=mycompany,dc=com'],
+        'password_expired': False,
+        'account_locked': False,
+        'user_email': john.doe@company.com
+    }
+}</code></pre>
+<p>If the token is invalid (expired or unknown), you will receive the following JSON response:</p>
+<pre><code>{
+    "active": "false"
+}</code></pre>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

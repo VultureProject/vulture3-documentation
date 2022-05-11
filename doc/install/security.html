@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hardening guide</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                    Installation
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/install/security.html">
+                                    Security
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Hardening guide</h1>
+            <h2 id="overview">Overview</h2>
+<p>Here you will find details on security measures inside Vulture.<br/>
+We tried to find the good balance between security and usability inside Vulture. <strong>If you find any security related problem within Vulture, please contact us at support@vultureproject.org</strong><br/></p>
+<h2 id="system">System</h2>
+<h3 id="system-settings">System settings</h3>
+<p>These settings differs from default FreeBSD 11.0 installation. <br/>
+/etc/sysctl.conf:</p>
+<pre><code>kern.ipc.maxsockbuf=16777216
+kern.ipc.soacceptqueue=2048
+kern.maxfilesperproc=117261
+kern.maxprocperuid=64000</code></pre>
+<h3 id="default-accounts">Default accounts</h3>
+<p>The following accounts are created during Vulture's bootstrap:</p>
+<pre><code>/usr/sbin/pw useradd -n vlt-gui -s /bin/csh -m -w random
+/usr/sbin/pw useradd -n vlt-portal -s /bin/csh -w random
+/usr/sbin/pw useradd -n vlt-sys -s /bin/csh -m -w random
+/usr/sbin/pw useradd -n vlt-data -s /bin/csh -w random
+/usr/sbin/pw useradd -n vlt-adm -s /bin/csh -m -w none
+/usr/sbin/pw useradd -n haproxy -s /usr/sbin/nologin -m -w random</code></pre>
+<p>As you can see, vlt-gui, vlt-portal, vlt-sys and vlt-data have random password. This means one may be able to connect to Vulture through an ssh brute-force attack on this account. <br/>
+You may want to enforce security by locking these accounts, with <code>pw lock vlt-gui</code> for example.</p>
+<p><code>haproxy</code> account cannot log in onto the system.</p>
+<p><code>vlt-adm</code> is the administrative account of Vulture and should have a robust password.
+This password is scrambled during bootstrap.</p>
+<p><strong>Note:</strong> When you install Vulture choose a robust root password</p>
+<h3 id="openssh">OpenSSH</h3>
+<p>OpenSSH is enabled by default. You can disable it <a href="/doc/management/services.html">from the GUI</a> and enable it when needed.</p>
+<h2 id="network">Network</h2>
+<h3 id="system-settings-1">System settings</h3>
+<p>These settings differs from default FreeBSD 11.0 installation. <br/>
+/etc/sysctl.conf:</p>
+<pre><code>net.inet.tcp.sendbuf_max=16777216
+net.inet.tcp.recvbuf_max=16777216
+net.inet.tcp.sendbuf_auto=1
+net.inet.tcp.recvbuf_auto=1
+net.inet.tcp.sendbuf_inc=16384
+net.inet.tcp.recvbuf_inc=524288
+
+net.inet.tcp.mssdflt=1460
+net.inet.tcp.minmss=1300
+net.inet.tcp.syncache.rexmtlimit=0
+net.inet.tcp.syncookies=0
+net.inet.tcp.tso=0
+net.inet.ip.check_interface=1
+net.inet.ip.process_options=0
+net.inet.ip.random_id=1
+net.inet.ip.redirect=0
+net.inet.icmp.drop_redirect=1
+net.inet.tcp.always_keepalive=0
+net.inet.tcp.drop_synfin=1
+net.inet.tcp.ecn.enable=1
+net.inet.tcp.icmp_may_rst=0
+net.inet.tcp.msl=5000
+net.inet.udp.blackhole=1
+net.inet.tcp.blackhole=2
+net.inet.carp.preempt=1</code></pre>
+<h3 id="packet-filter">Packet filter</h3>
+<p>PF is an important security part of Vulture. The default filtering policy is shown below.</p>
+<p><code>You need to adapt this policy to your needs and whenever you add new listeners in Vulture. In particular, be sure to never allow inter-cluster ports from outside. THIS IS ENABLE BY DEFAULT!</code></p>
+<pre><code>#These limits are far beyond FreeBSD's pf default limit.
+set limit { states 100000, frags 25000, src-nodes 50000 }
+
+pass quick on lo0 all
+
+#The default Vulture's pf policy is:
+# - Drop and log everything in input
+# - Accept any outgoing traffic
+# - IPV6 is enabled by default
+
+block in log all
+pass in proto icmp6 all
+pass out proto icmp6 all
+pass out all keep state
+
+# Whitelist for Vulture Cluster
+# This table is auto managed by Vulture
+table &lt;vulture_cluster&gt; persist file "/usr/local/etc/pf.vulturecluster.conf"
+pass in quick from &lt;vulture_cluster&gt;
+
+# Brute force / SYN Flood / DDOS mitigation rule
+# Use pfctl -t abusive_hosts -T show to show currently blacklisted hosts
+# You can add manual persistent IP in this file
+table &lt;abusive_hosts&gt; persist file "/usr/local/etc/pf.abuse.conf"
+block in log quick from &lt;abusive_hosts&gt;
+
+# Incoming policy: By default, HTTP and HTTPS ports are accepted from everywhere on em0
+pass log quick inet proto tcp from any to em0 port { 80, 443 } flags S/SA keep state \
+                                (max-src-conn 100, max-src-conn-rate 15/5, \
+                                 overload &lt;abusive_hosts&gt; flush global)
+
+# SSH brute-force protection
+# Incoming policy: By default, SSH port is accepted from everywhere
+pass log quick inet proto tcp from any to em0 port 22 flags S/SA keep state \
+                                (max-src-conn 100, max-src-conn-rate 3/5, \
+                                 overload &lt;ssh_abusive_hosts&gt; flush global)
+
+# Incoming policy: By default inter-cluster communication are allowed from everywhere on em0
+pass quick proto tcp from any to em0 port 8000 flags S/SA keep state
+pass quick proto tcp from any to em0 port { 6379, 9091, 26379 } flags S/SA keep state
+
+# ---- Allow CARP communications between nodes
+pass in proto carp all</code></pre>
+<p>`</p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

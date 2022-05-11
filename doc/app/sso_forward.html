@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SSO Forward</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/internet.html">
+                                    Internet
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/backend.html">
+                                    Backend
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/network.html">
+                                    Network
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/security.html">
+                                    Security
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/logs.html">
+                                    Logs
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/request_header.html">
+                                    Request header
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/response_header.html">
+                                    Response header
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/content_rewrite.html">
+                                    Content Rewriting
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/app/authentication.html">
+                                    Authentication
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/app/sso_forward.html">
+                                    SSO Forward
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>SSO Forward</h1>
+            <h2 id="overview">Overview</h2>
+<p>Once a user is logged on Vulture, it is not yet authenticated on the web application.<br/>
+The user will have to manually login on the application by supplying login / password or whatever... <br/>
+<br/>
+If you configure what we call <strong>SSO Forward</strong> here, Vulture will be able to:<br/></p>
+<ol>
+<li>Propagate the credentials provided by the user to the protected application. We call that <strong>&quot;Autologon&quot;</strong>.</li>
+<li>Propagate other credentials, previously stored in Vulture. We call that <strong>&quot;SSO Learning&quot;</strong>.</li>
+</ol>
+<p><img src="/doc/img/sso.png" alt="SSO" /></p>
+<h2 id="sso-forward-settings">SSO Forward settings</h2>
+<h3 id="main-settings">Main settings</h3>
+<ul>
+<li><code>Enable SSO Forward</code>: Click to enable SSO Forward</li>
+<li><code>Follow the 30[1|2] redirection after SSO request</code>: <strong>AFTER</strong> the SSO Forward request, the web application may perform a 30X HTTP redirection. This setting lets you choose if you want Vulture to follow this redirection or to ignore it.</li>
+<li><code>Immediately return the SSO response</code>: By default, <strong>AFTER</strong> the SSO Forward request, Vulture will redirect the user to the URI it initially asked for. Thus, HTTP response of the application is ignored from the user point of view. You can break this workflow and immediately return the application's response to the user by toggling this setting.</li>
+<li><code>Use Vulture User-Agent</code>: If enabled, HTTP request between Vulture and the application, <strong>DURING SSO Forward</strong>, will be done with a special 'Vulture-3.0' User-Agent HTTP Header. This allow you to distinguish Vulture authentication requests in your application's logfiles.</li>
+<li><code>URL to disconnect from your private application</code>: When a user will request this <strong>relative URI</strong>, Vulture will destroy the session in Redis, thus disconnect the user from Vulture.</li>
+<li><code>Display the logout message from template</code>: If a user click on a disconnect URI, he will be redirected to the root directory of the application. If you want to display an &quot;HTML logout form&quot; from Vulture's <a href="/doc/app/template.html">Portal template</a>, toggle this option.</li>
+<li><code>Destroy portal session on disconnect</code>: When a user click on a disconnect URI, his session is destroyed on the application, but not on the <a href="/doc/authentication/self.html">Vulture portal</a>. If you also want to destroy the portal session on disconnect, toggle this option.</li>
+</ul>
+<h5 id="for-all-of-the-authentication-methods-bellow-the">For all of the authentication methods bellow, the <code>SSO URL</code> field behavior has changed since version <strong>1.62</strong>. <br></h5>
+<p>If the pattern <strong>[ ]</strong> is found in the field value, it will be <strong>replaced by the url of the backend (private uri)</strong>. <br>
+We have implemented that behavior to fully support SSO with ProxyBalancer.
+Ideed, the pattern will be replaced by the first member private url, and if the connection fail the next member will be contacted. <br>
+For example :</p>
+<blockquote>
+<p>if I enter <strong>&quot;[ ]/logon.html&quot;</strong> in <code>SSO URL</code> and I have 2 members in my <strong>ProxyBalancer</strong> configuration having the urls :</p>
+<ul>
+<li><a href="http://192.168.1.50/post/">http://192.168.1.50/post/</a>,</li>
+<li><a href="http://192.168.1.51/post/">http://192.168.1.51/post/</a>,</li>
+</ul>
+<p>The SSO will be performed on <a href="http://192.168.1.50/post/logon.html">http://192.168.1.50/post/logon.html</a> and if it fail it will be performed on <a href="http://192.168.1.51/post/logon.html">http://192.168.1.51/post/logon.html</a>. <br></p>
+</blockquote>
+<h5 id="furthermore-if-you-have-the-2-caracters">Furthermore, if you have the 2 caracters <strong>[</strong> and <strong>]</strong> but you don't want them to be interpreted, simply escape them by respectively <strong>\[</strong> and <strong>\]</strong>.</h5>
+<h3 id="sso-forward-using-basic-authentication">SSO Forward using Basic authentication</h3>
+<ul>
+<li><code>Forward credentials</code>: If set to &quot;using Autologon&quot;, Vulture will authenticate on the Application using credentials provided by the user. If set to &quot;using SSO Learning&quot;, Vulture will authenticate on the Application using previously learned credentials.</li>
+<li><code>Send Authorization header only to the login page</code>: By default, Vulture will send the &quot;Authorization&quot; header in every request to the Web application. If you only want to send the header to the login page, toggle this option.</li>
+<li><code>URL to login to your private application</code>: You have to define the FULL URI of the login page, if you have enable the previous option.</li>
+</ul>
+<h3 id="sso-forward-using-html-form">SSO Forward using HTML Form</h3>
+<ul>
+<li>
+<p><code>URL to login to your private application</code>: You have to define the FULL URI of the login page. Vulture will POST credentials to this page in an automated manner:</p>
+<ol>
+<li>Vulture will first do a HTTP GET on the page.</li>
+<li>Then it will detect the authentication FORM.</li>
+<li>Then it will fill in the FORM with credentials and DATA given by the user (autologon) or previously saved (learning).</li>
+<li>Then it will submit the FORM.</li>
+</ol>
+<ul>
+<li><code>Content-Type of POST Request</code>: You can specify here the format of the POST content that vulture will send to the application.</li>
+<li><code>SSO Forward Status</code>: This indicates if you successfully performed the SSO Wizard.</li>
+</ul>
+</li>
+</ul>
+<p><strong> HTML Form WIZARD</strong></p>
+<p>First, fill in the <code>URL to login to your private application</code> field. Then click on 'Wizard'. <br/>
+When clicking on Wizard, Vulture will:</p>
+<ol>
+<li>Send a GET request to the &quot;URL to login&quot;.</li>
+<li>Display the list of all HTML FORM it has detected inside the page.</li>
+</ol>
+<p>Inside the HTML FORM corresponding to the Login form of your application, you will have to tell to Vulture what it should POST to the application for login. <br/>
+Here are the field type available:</p>
+<ul>
+<li><code>OAuth2 Token</code>: Vulture will fill in the field with the OAuth2 token associated with the user session.</li>
+<li><code>Dynamic Value</code>: Vulture will fill in the field with the value set by the application itself.</li>
+<li><code>Autologon User</code>: Vulture will fill in the field with the login provided by the user during authentication.</li>
+<li><code>Autologon Password</code>: Vulture will fill in the field with the password provided by the user during authentication.</li>
+<li><code>Custom Text Value</code>: Vulture will fill in the field with this static value.</li>
+<li><code>Learning</code>: Vulture will first prompt the user for the value, after authentication. Then, when the user logs in later on, Vulture will automatically send this stored value.</li>
+<li><code>Learning Secret</code>: Same as above, but the field is prompted using a PASSWORD box, not a TEXT box</li>
+</ul>
+<p>Learned values are stored inside Vulture in the MongoEngine database. <br/>
+Values are encrypted using AES256, with a KEY derived from the following attributes :</p>
+<ul>
+<li>Vulture's internal Django SECRET_KEY.</li>
+<li>Vulture's internal Application ID.</li>
+<li>Vulture's internal Authentication Backend ID.</li>
+<li>Login of the user.</li>
+<li>Name of the learning field.</li>
+</ul>
+<p>Using the Wizard, you can also send custom fields to the protected application. <br/>
+These fields may be sent as <strong>POST content</strong>, or as <strong>HTTP Cookie</strong>. <br/>
+Just click on 'Add Custom Field'.</p>
+<h3 id="sso-forward-using-kerberos-authentication">SSO Forward using Kerberos authentication</h3>
+<ul>
+<li><code>Kerberos service of the app</code>: This is the service name used by the Kerberos-protected application to verify TGTs on the KDC</li>
+<li>
+<p><code>Forward credentials</code>:</p>
+<ul>
+<li>
+<p>If set to &quot;using Autologon&quot;, Vulture will authenticate on the Application using:</p>
+<ol>
+<li>kinit on the KDC, with credentials provided by the user to obtain a TGT.</li>
+<li>Send WWW-Authorization: Negotiate <TGT> in each following requests.</li>
+</ol>
+</li>
+<li>If set to &quot;using SSO Learning&quot;, Vulture will authenticate on the Application using:
+<ol>
+<li>kinit on the KDC, with credentials previously learned to obtain a TGT.</li>
+<li>Send WWW-Authorization: Negotiate <TGT> in each following requests.</li>
+</ol></li>
+</ul>
+</li>
+<li><code>Send Authorization header only to the login page</code>: By default, Vulture will send the &quot;Authorization&quot; header in every request to the Web application. If you only want to send the header to the login page, toggle this option. <strong>This is probably not what you want with Kerberos authentication, so you should probably not enable this</strong>.</li>
+<li><code>URL to login to your private application</code>: You have to define the FULL URI of the login page, if you have enabled the previous option.</li>
+</ul>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

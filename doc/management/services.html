@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Services management</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                    Nodes
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/management/services.html">
+                                    Services
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/pki.html">
+                                    PKI
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/users.html">
+                                    Users
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/reputation.html">
+                                    Reputation
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/logs.html">
+                                    Logs Viewer
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/management/upgrade.html">
+                                    Upgrade
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Services management</h1>
+            <h2 id="overview">Overview</h2>
+<p>From the &quot;Management / Services&quot; view you can manage Vulture's global settings:</p>
+<ul>
+<li>ModSecurity URL settings</li>
+<li>Vulture global settings</li>
+<li>Log global settings</li>
+<li>Location settings</li>
+</ul>
+<p>You can also manage the configuration of the following system services:</p>
+<ul>
+<li>DNS</li>
+<li>NTP</li>
+<li>SMTP</li>
+<li>SSH</li>
+<li>FAIL2BAN</li>
+</ul>
+<h2 id="modsecurity-url-settings">ModSecurity URL settings</h2>
+<ul>
+<li><code>OWASP CRS URL</code>: The ModSecurity URL from which Vulture should download OWASP CRS ruleset.</li>
+<li><code>Trustwave rules URL</code>: The URL from which Vulture should download rules from Spiderlabs Research (SLR).</li>
+<li><code>Trustwave authentication header</code>: The authentication header needed to download SLR rules.</li>
+</ul>
+<h2 id="vulture-settings">Vulture settings</h2>
+<ul>
+<li><code>Source branch</code>: The name of the branch from where to download vulture.</li>
+<li><code>Portal Cookie Name</code>: The name of the Cookie used to maintain session on the Vulture portal (randomized by default).</li>
+<li><code>Application Cookie Name</code>: The name of the Cookie used to maintain session on Web Applications (randomized by default).</li>
+<li><code>Public Token Name</code>: The name of the token used during redirection from application to the portal login form (randomized by default).</li>
+<li><code>OAuth2 Token Name</code>: The name of the HTTP Header used by Vulture to get the user's OAuth2 Token (&quot;X-Vlt-Token&quot; by default).</li>
+<li><code>GUI Timeout</code>: The amount of time, in seconds, before disconnecting the user from the Vulture GUI. Everytime the user clicks on the GUI, the timeout is resetted.</li>
+</ul>
+<h2 id="log-settings">Log settings</h2>
+<p>Vulture stores internal logs (GUI logs, Portal logs, pf logs, diagnostic logs, ...) into a &quot;Log repository&quot;. <br>
+By default logs are stored :</p>
+<ul>
+<li>Inside the Vulture internal mongoDBEngine.</li>
+<li>On disk, in /var/log/Vulture/*</li>
+</ul>
+<p>From this menu you can:</p>
+<ul>
+<li>Choose any data repository created from the <a href="/doc/repository/repo.html">Repository menu</a>.</li>
+<li>Choose when the rotation should occur (daily by default).</li>
+<li>
+<p>How many archives you want to keep (30 by default).</p>
+<p><code>Rotation and archives to keep apply to on-disk file and internal mongoDBEngine</code>. This is to prevent any saturation of the internal database. If you choose a remote repository, like ElasticSearch - which is recommended in case of heavy traffic, Vulture won't rotate the logs inside this remote repository.</p>
+</li>
+</ul>
+<h2 id="services-settings">Services settings</h2>
+<h3 id="overview-1">Overview</h3>
+<p>For many of these services, you can choose to apply configuration on a given node or on the whole cluster.</p>
+<h3 id="dns-resolver">DNS Resolver</h3>
+<p>These settings are used to build the /etc/resolv.conf of Vulture. By default no DNS configuration exists, you will need to define your DNS configuration if you want Vulture to access the Internet (for system updates). If you access Internet through an HTTP Proxy, it is not required to define any DNS.</p>
+<h3 id="ntp-settings">NTP Settings</h3>
+<p>Define here the addresses of your NTP server. If NTP server are on the Internet don't forget to configure DNS resolution if needed to resolv NTP hostname</p>
+<h3 id="smtp-settings">SMTP Settings</h3>
+<p>Vulture needs to send emails when <a href="/doc/repository/otp">email OTP</a> is enable. Vulture won't send email directly and requires an SMTP server to relay emails. If no relay server is available within your organisation you can still configure a local postfix on Vulture and user 127.0.0.1 as SMTP relay here here.</p>
+<h3 id="ssh-settings">SSH Settings</h3>
+<p>From this menu you can enable / disable SSH service on vulture nodes.</p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

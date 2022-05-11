@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MongoDB Repository</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/ldap.html">
+                                    LDAP / AD
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/kerberos.html">
+                                    Kerberos
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/radius.html">
+                                    Radius
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/sql.html">
+                                    SQL
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/syslog.html">
+                                    Syslog
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/repositories/mongodb.html">
+                                    MongoDB
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/elastic.html">
+                                    Elasticsearch
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/otp.html">
+                                    OTP
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>MongoDB Repository</h1>
+            <h2 id="mongodb-repositories">MongoDB repositories</h2>
+<p>MongoDB can be used as an authentication backend or as a data repository for logs.</p>
+<h3 id="vulture-internal-database-mongodbrepository">Vulture Internal Database (MongoDBRepository)</h3>
+<p>This is the internal mongodb database for the Vulture cluster. You cannot configure anything about it, but you can use this database to authenticate users or to store logs into it.
+We do not recommend using this database for storing huge volume of logs, except if you are running a Vulture cluster with good performances (use an external elastic repo whenever you can).</p>
+<p>Under normal conditions there is no need to connect to the Vulture's database.<br/></p>
+<blockquote>
+<p>Just in case, here is the command to obtain a shell on the mongodb database:</p>
+<pre><code>mongo --ssl --sslPEMKeyFile /var/db/mongodb/mongod.pem 127.0.0.1:9091/vulture</code></pre>
+<p>Use it with caution, you have been warned :-)</p>
+</blockquote>
+<p>Remember you can't write to a mongoDB SECONDARY slave. You will have to connect to the PRIMARY for any write operation.</p>
+<h3 id="mongodb-repository">MongoDB repository</h3>
+<h4 id="connection-settings">Connection settings</h4>
+<p>The following information will be required to create a MongoDB repository:</p>
+<ul>
+<li><code>Repository name</code> : A friendly name for your repo.</li>
+<li><code>Repository type</code> : You have to choose the purpose of the repo: 'Data' or 'Authentication' repository.</li>
+<li><code>Database host</code> : The IP address of your mongoDB server.</li>
+<li><code>Database port</code> : The mongoDB TCP port to use.</li>
+<li><code>Replicaset</code> : If your mongoDB server is part of a cluster, choose the Replica Set of the cluster.</li>
+<li><code>Client certificate</code> : If the mongoDB requires a client certificate, you can use the one selected here. See <a href="/doc/management/pki.html">PKI Management</a> to know how to add certificates inside Vulture.</li>
+<li><code>Database name</code> : Name of the mongoDB database to use for the repo.</li>
+<li><code>Username</code> : MongoDB username.</li>
+<li><code>Password</code> : Corresponding MongoDB password.</li>
+</ul>
+<p>Please note that:</p>
+<ul>
+<li>Vulture does not support user groups inside MongoDB. <a href="/doc/repositories/ldap.html">Use LDAP for that</a>.</li>
+<li>Vulture requires you to choose a client certificate to connect to TLS mongoDB Server. If no certificate is selected, Vulture will use plaintext unencrypted connection.</li>
+</ul>
+<p>When clicking on &quot;Test User authentication settings&quot;, you can test if your settings are good. Vulture will prompt for a login and a password and will try to fetch user's email and phone number.
+If authentication is unsuccessful, the error message should indicates the reason. Usually this is because of an authentication failure or wrong LDAP filters / attributes.</p>
+<h4 id="users-settings-authentication-repository">Users settings (Authentication repository)</h4>
+<p>You must fill in this field in case you are creating an authentication repository.</p>
+<ul>
+<li><code>User collection name</code> : Name of the MongoDB collection that contain users.</li>
+<li><code>Username field name</code> : Name of the document field, inside the collection, that contains the user's login.</li>
+<li><code>Username's password field name</code> : Name of the document field, inside the collection, that contains the user's password.</li>
+<li><code>Password hash algorythm</code> : Algorithm used for password hashing.</li>
+<li><code>Password salt</code> : Optional salt field that is concatenated with the password before hashing.</li>
+<li><code>Password salt position</code> : optional salt position.</li>
+<li><code>Change pass field</code> : Name of the document field, inside the collection, that Vulture will check to know if the user MUST change his password.</li>
+<li><code>Change pass expected value</code> : If the <code>Change pass field</code> contains this specific value, Vulture will inform the user that its password MUST be changed</li>
+<li><code>User mobile field name</code> : Name of the document field that contains the user's phone number. This is used by the <a href="/doc/repositories/otp.html">One Time Password</a> authentication feature.</li>
+<li><code>User email address field name</code> : Name of the document field that contains the user's email address. This is used by the <a href="/doc/repositories/otp.html">One Time Password</a> authentication feature.</li>
+</ul>
+<p>Once these field are filled, this is recommended to test authentication by clicking on &quot;Test user authentication settings&quot;. Vulture will prompt for a login and a password and will try to authenticate against the mongoDB repository.
+If it succeed, email and phone number of the user will be displayed on screen. In case of a failure, Vulture will display the error message.</p>
+<h4 id="data-settings-data-repository">Data settings (Data repository)</h4>
+<p>Logs are sent to MongoDB through rsyslog. <br/>
+You must fill in this field in case you are creating a data repository, to store Vulture logs.</p>
+<ul>
+<li><code>Access collection name</code> : Name of the MongoDB collection that will contain Vulture's Apache worker access logs</li>
+</ul>
+<p>Please note that when using MongoDB to store logs, Vulture uses some hardcoded collection name for its internal logs.
+These names cannot be changed:</p>
+<ul>
+<li><code>vulture_pf</code>: is used to hold the pf firewall logs</li>
+<li><code>vulture_logs</code>: is used to hold the Vulture's internal logs (GUI, PORTAL, ...)</li>
+<li><code>vulture_fail2ban</code>: is used to hold the fail2ban logs</li>
+<li><code>vulture_diagnostic</code>: is used to hold the Vulture's diagnostic logs</li>
+</ul>
+<h4 id="oauth2-settings-authentication-repository">OAuth2 settings (Authentication repository)</h4>
+<p>Please see <a href="/doc/authentication/oauth2.html">OAuth2 Authentication</a> for details.</p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

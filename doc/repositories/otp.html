@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Two-factor authentication repository</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/ldap.html">
+                                    LDAP / AD
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/kerberos.html">
+                                    Kerberos
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/radius.html">
+                                    Radius
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/sql.html">
+                                    SQL
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/syslog.html">
+                                    Syslog
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/mongodb.html">
+                                    MongoDB
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/repositories/elastic.html">
+                                    Elasticsearch
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/repositories/otp.html">
+                                    OTP
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>Two-factor authentication repository</h1>
+            <h2 id="overview">Overview</h2>
+<p>Two-factor authentication is based on sending a one-time-password (OTP) to the user after a first successful authentication. <br/>
+The user is going to receive his otp code by email or SMS and will have to provide it to Vulture. <br/>
+Vulture will then check the received code and, if valid, it will let the user access his application. <br/>
+Vulture also now support TOTP (Time-based OTP).<br/>
+<br/>
+This achieves strong authentication: The user first needs a valid login / password on a Vulture Repository <strong>then</strong> needs to confirm an OTP received by email / phone.</p>
+<h2 id="otp-repository">OTP Repository</h2>
+<p>The following elements are required to create an OTP repository:</p>
+<ul>
+<li><code>Repository Name</code>: A friendly name for your repo.</li>
+<li><code>Otp Type:</code>: Select how to send the OTP to the user: by email or by phone.</li>
+<li><code>Key length</code>: You can choose the length of the random OTP that will be send to the user.</li>
+</ul>
+<p>For now vulture supports the following OTP system:</p>
+<ul>
+<li><a href="https://www.authy.com">Authy</a> for SMS OTP.</li>
+<li>Vulture email for Email OTP.</li>
+</ul>
+<p><em>Note that it is easy to add new OTP backend</em>, so feel free to [contact us](mailto: support@vultureproject.org) if you want support for other OTP systems</p>
+<p>Once your repository is created, you can use it in any of your application that requires authentication. See <a href="/doc/application/auth.html">application authentication</a> for details<br/>
+<code>Note that OTP requires an LDAP, SQL or MongoDB authentication repository to work</code> <br/>
+<br/></p>
+<h3 id="otp-by-email">OTP by Email</h3>
+<p>You need to setup the SMTP relay that Vulture will use to send its email. <br/>
+Check <a href="/doc/management/services.html">SMTP settings</a> for details. <br/>
+<br/></p>
+<h3 id="otp-by-sms">OTP by SMS</h3>
+<h4 id="authy">Authy</h4>
+<p>Vulture uses Authy API to send OTP. So you will need to provide you service <code>API KEY</code> for this to work. To obtain your key, go to the <a href="https://www.authy.com/">Authy</a> portal and click on &quot;Try It Now&quot;. <br/>
+Fill in the required form, follow the tutorial to create your first app, then copy and paste your authy key:</p>
+<p><img src="/doc/img/otp.png" alt="Authy-key" />
+<br/></p>
+<h3 id="otp-by-onetouch">OTP by OneTouch</h3>
+<h4 id="authy-1">Authy</h4>
+<p>Vulture uses Authy API to verify authentication. It needs the Authy application to be installed on the user's mobile.<br/>
+The OneTouch method does not use password, just a user validation in the Authy application.</p>
+<h3 id="time-base-otp">Time-base OTP</h3>
+<p><code>Time-based OTP needs time precision.</code> <br/>
+There is no setting to configure when choosing that type of authentication. <br/>
+A TOTP application is needed on the user's mobile (like <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">Google Authenticator</a>). <br/> <br/>
+The first time the user uses TOTP, a QRCode is displayed and he has to save-it into his application. <code>That QRcode is displayed once.</code> <br/>
+Then, the user tape the code displayed on its mobile into Vulture portal OTP input. <br/> <br/>
+That code is saved into Vulture internal database with AES cipher. If the user has lost his phone, just go to <a href="/repository/sso_profiles/">SSO profiles</a> and delete the entry associated to the user.</p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+

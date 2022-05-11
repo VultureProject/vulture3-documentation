@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>WAF Policy</title>
+
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/highlight.dark.css">
+    <link rel="stylesheet" href="https://www.vultureproject.org/css/main.css">
+</head>
+<body class="">
+
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://www.vultureproject.org/" class="navbar-brand"><img src="https://www.vultureproject.org/doc/img/logo.png" alt=""></a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <h1>Vulture 3.0 Documentation</h1>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<main class="container-fluid">
+    <div class="row">
+
+        
+            <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                <ul class="nav nav-pills nav-stacked">
+                                            <li class="">
+                            <a href="https://www.vultureproject.org/">
+                                <i class='fa fa-home'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Vulture
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/getting-started.html">
+                                <i class='fa fa-star'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Getting Started
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/install/steps.html">
+                                <i class='fa fa-download'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Installation
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/reporting/map.html">
+                                <i class='fa fa-bar-chart'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Reporting
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/management/nodes.html">
+                                <i class='fa fa-desktop'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Management
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/repositories/repo.html">
+                                <i class='fa fa-database'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Repositories
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/network/network.html">
+                                <i class='fa fa-globe'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Network
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/configuration/profile.html">
+                                <i class='fa fa-gear'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Configuration
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/waf/waf.html">
+                                <i class='fa fa-cloud'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Web firewall
+                            </a>
+                        </li>
+                                                <ul class="submenu nav nav-stacked nav-pills">
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/waf/ruleset.html">
+                                    WAF Ruleset
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="active">
+                                <a href="https://www.vultureproject.org/doc/waf/policy.html">
+                                    WAF Policy
+                                </a>
+                            </li>
+
+                                                        <ul class="submenu nav nav-stacked nav-pills">
+                                                            </ul>
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/waf/virtualpatching.html">
+                                    Virtual Patching
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/waf/dataset.html">
+                                    Datasets
+                                </a>
+                            </li>
+
+                            
+                                                        <li class="">
+                                <a href="https://www.vultureproject.org/doc/waf/pf.html">
+                                    Packet Filter
+                                </a>
+                            </li>
+
+                            
+                                                    </ul>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/app.html">
+                                <i class='fa fa-cubes'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Applications
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/app/template.html">
+                                <i class='fa fa-file-code-o'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Portal Templates
+                            </a>
+                        </li>
+                                                                    <li class="">
+                            <a href="https://www.vultureproject.org/doc/troubleshooting/troubleshooting.html">
+                                <i class='fa fa-wrench'>&nbsp;&nbsp;&nbsp;&nbsp;</i>Troubleshooting
+                            </a>
+                        </li>
+                                                            </ul>
+            </nav>
+
+        
+        <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            <h1>WAF Policy</h1>
+            <p>This menu lists the custom policies in effect by mod_security.</p>
+<p>It allows you to create new one on the fly, and you can fine tune them.</p>
+<h2 id="main-settings">Main settings</h2>
+<p><code>Fiendly name</code>: The name of the policy.<br/> <br></p>
+<p><code>Enable body inspection</code>: Toggle the body parsing (CPU intensive).<br/>
+This option will enable or disable the <b>SecRequestBodyAccess</b> ModSecurity directive. <br>
+This directive is required if you use a RuleSet like OWASP-RS or Vulture-RS in your application. <br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecRequestBodyAccess">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecRequestBodyAccess</a> for more informations about this option.</p>
+<p><code>Enable content injection</code>: Toggle the content injection (CPU intensive)<br/>
+This option will enable or disable the <b>SecContentInjection</b> and <b>SecStreamOutBodyInspection</b> ModSecurity directives. <br>
+This option is required if you use a RuleSet like OWASP-RS or Vulture-RS in your application. <br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecRequestBodyAccess">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecRequestBodyAccess</a> and <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecStreamOutBodyInspection">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecStreamOutBodyInspection</a> for more information about this option.</p>
+<p><code>Disable backend compression</code>: Disable compression.<br/>
+This option will enable or disable the <b>SecDisableBackendCompression</b> ModSecurity directive. <br>
+That one is required if you have &quot;body inspection&quot; and/or &quot;content injection&quot; enabled, as well as to use OWASP-RS or Vulture-RS. <br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecDisableBackendCompression">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecDisableBackendCompression</a> for more information about this option. <br> <br></p>
+<p><code>Validate UTF8 Encoding</code>: Toggle the parsing and validation of the UTF8 encoding compliance. <br/>
+Enable that option will set the ModSecurity variable &quot;tx.crs_validate_utf8_encoding=1&quot;.<br>
+You have to use the OWASP-RS in your application to enable this option. <br><br></p>
+<p><code>XML Inspection</code>: Validate the XML structure correctness. <br/>
+Enable that option will set the ModSecurity variable &quot;tx.requestBodyProcessor=XML&quot;.<br>
+You have to use the OWASP-RS in your application to enable this option. <br><br></p>
+<p><code>Block invalid body</code>: Returns 400 (Invalid request) status code is body is detected as invalid. <br/>
+This option enable the following ModSecurity directive: <br>
+SecRule REQBODY_ERROR &quot;@eq 1&quot; \
+&quot;id:'95',phase:2,t:none,log,deny,status:400,msg:'Failed to parse request body.',logdata:'%{reqbody_error_msg}',severity:2&quot; <br>
+The REQBODY_ERROR variable is set in the OWASP Core Rules Set, so you have to use the OWASP-RS in your application to verify the body correctness. <br><br></p>
+<p><code>Connections engine</code>: Toggle the rule, or set it up as detection only to log only.<br/>
+This option will modify the <b>SecConnEngine</b> ModSecurity directive. <br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecConnEngine">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecConnEngine</a> for more information about this option. <br> <br></p>
+<p><code>Audit Engine</code>: Log level, enable/disable or only log if revelant.<br/>
+This option will modify the <b>SecAuditEngine</b> ModSecurity directive. <br>
+This directive is used to configure the audit engine, which logs complete transactions. <br>
+Three options are available :</p>
+<ul>
+<li>On : log all transactions,</li>
+<li>Off, do not log any transaction,</li>
+<li>RelevantOnly: only the log transactions that have triggered a warning or an error, or have a status code that is considered to be relevant (as determined by the SecAuditLogRelevantStatus directive).<br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecAuditEngine">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecAuditEngine</a> for more informations about this option. <br> <br></li>
+</ul>
+<p><code>Relevant status code</code>: This option is used if the last option is configured with the value &quot;RelevantOnly&quot;. <br>
+It will set the <b>SecAuditLogRelevantStatus</b> directive. <br>
+The default regex &quot;^(?:5|4(?!04))&quot; means that all 4xx and 5xx status code will be logged, except for 404s. <br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecAuditLogRelevantStatus">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecAuditLogRelevantStatus</a> for more informations about this option. <br> <br></p>
+<p><code>Logging Mode</code>: Select the log file, audit_log, error_log or both<br/>
+This option will modify the <b>SecDefaultAction</b> ModSecurity directive. <br>
+Three options are available : <br>
+Both, this will set the directive with the value : SecDefaultAction &quot;phase:2,pass,log&quot;<br>
+Audit logs, this will set the directive with the value : SecDefaultAction &quot;phase:2,pass,nolog,auditlog&quot;<br>
+Apache error logs, this will set the directive with the value : SecDefaultAction &quot;phase:2,pass,log,noauditlog&quot;<br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecDefaultAction">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecDefaultAction</a> for more informations about this option. <br> <br></p>
+<p><code>Enable Mod Defender</code>: Toggle the activation of Mod Defender.<br/>
+This option will enable or disable the <b>Defender</b> ModDefender directive. <br>
+This directive is required if you want to use : <br></p>
+<ul>
+<li>Generic SQL detection</li>
+<li>Generic XSS detection
+See <a href="https://www.vultureproject.org/doc/waf/waf.html">https://www.vultureproject.org/doc/waf/waf.html</a> for more informations about Mod Defender in Vulture. <br> <br></li>
+</ul>
+<p><code>Enable Generic SQL Detection</code>: Toggle the activation of LibinjectionSQL.<br/>
+This option will enable or disable the <b>LibinjectionSQL</b> ModDefender directive. <br>
+That directive will activate the use of the <b>libinjection</b> library. <br>
+The last option must be enabled to use that one. <br>
+See <a href="https://www.vultureproject.org/doc/waf/waf.html">https://www.vultureproject.org/doc/waf/waf.html</a> for more informations about libinjection. <br> <br></p>
+<p><code>Enable Generic XSS Detection</code>: Toggle the activation of LibinjectionXSS.<br/>
+This option will enable or disable the <b>LibinjectionXSS</b> ModDefender directive. <br>
+That directive will activate the use of the <b>libinjection</b> library. <br>
+The &quot;Enable Mod Defender&quot; option must be enabled to use that one. <br>
+See <a href="https://www.vultureproject.org/doc/waf/waf.html">https://www.vultureproject.org/doc/waf/waf.html</a> for more informations about libinjection. <br> <br></p>
+<h2 id="scoring">Scoring</h2>
+<p>Each HTTP request begins with an anomaly score of 0 and is incremented each time a rule match.<br/>
+If a threshold (inbound or outbound) is reaches, corresponding actions are triggered.<br/>
+<code>Security Level</code>: Increase or decrease the anomal score threshold depending on the security level. <br>
+<code>Block desktop users User-Agent</code>: Enable this toggle will set the variable &quot;ua_browser_anomaly_score&quot; to 999, which means that if the user-agent is detected as &quot;Desktop user&quot;, the anomaly score will be increased by 999, and reach the threshold an block the request. <br>
+<code>Block crawlers User-Agent</code>: Enable this toggle will set the variable &quot;ua_crawler_anomaly_score&quot; to 999, which means that if the user-agent is detected as &quot;Desktop user&quot;, the anomaly score will be increased by 999, and reach the threshold and block the request. <br>
+If this toggle is not enabled, the anomaly score will be incremented by 2 in case of detecting the User-Agent as a crawler. <br>
+<code>Block suspicious User-Agent</code>: Enable this toggle will set the following variable to 999:  <br>
+ua_unknown_anomaly_score, ua_anonymous_anomaly_score, ua_bot_anomaly_score, ua_console_anomaly_score, ua_emailclient_anomaly_score, ua_emailharvester_anomaly_score, ua_script_anomaly_score <br>
+which means that if the user-agent is detected as &quot;Unknown&quot; or &quot;Anonymous&quot; or &quot;Bot&quot; or &quot;Console&quot; or &quot;emailclient&quot; or &quot;emailharvester&quot; or &quot;script&quot;, the anomaly score will be increased by 999, and reach the threshold and block the request. <br>
+If this toggle is not enabled, the scores will be set to 2 by default. <br></p>
+<p><code>Critical anomaly score</code>: The score added to the anomaly score when a critical rule match.<br/>
+<code>Error anomaly score</code>: The score added to the anomaly score when an error rule match.<br/>
+<code>Warning anomaly score</code>: The score added to the anomaly score when a warning rule match&lt;.br/&gt;
+<code>Notice anomaly score</code>: The score added to the anomaly score when a notice rule match.<br/>
+<code>Block if global score exceeds</code>: The score threshold that when reached will block the request.<br/></p>
+<h2 id="http-policy">HTTP Policy</h2>
+<p><code>Maximum number of arguments in request</code>: The maximum number of parameters in the request.<br/>
+This value will be set by the following ModSecurity directives : <br>
+SecAction &quot;id:'6', phase:2, t:none, setvar:tx.max_num_args={{policy.max_num_args}}, nolog, pass&quot; <br>
+This 2 variables will be used by the OWASP Rules Set, more precisely by the file <b>modsecurity_crs_23_request_limits.conf</b>.<br>
+You need to enable the OWASP-RS in your application to block the request if that value is reached. <br><br></p>
+<p><code>Maximum argument name length</code>: The maximum name length for each request parameters.<br/>
+This value will be set by the following ModSecurity directive: <br>
+SecAction &quot;id:'7', phase:2, t:none, setvar:tx.arg_name_length={{policy.arg_name_length}}, nolog, pass&quot; <br>
+This 2 variables will be used by the OWASP Rules Set, more precisely by the file <b>modsecurity_crs_23_request_limits.conf</b>.<br>
+You need to enable the OWASP-RS in your application to block the request if that value is reached. <br><br></p>
+<p><code>Maximum arguments value length</code>: The maximum value length for each request parameters. <br/>
+This value will be set by the following ModSecurity directive: <br>
+SecAction &quot;id:'8', phase:2, t:none, setvar:tx.arg_length={{policy.arg_length}}, nolog, pass&quot;
+This variable will be used by the OWASP Rules Set, more precisely by the file <b>modsecurity_crs_23_request_limits.conf</b>.<br>
+You need to enable the OWASP-RS in your application to block the request if that value is reached. <br><br></p>
+<p><code>Maximum arguments value total length</code>: The request arguments total length. <br/>
+This value will be set by the following ModSecurity directive: <br>
+SecAction &quot;id:'9', phase:2, t:none, setvar:tx.total_arg_length={{policy.total_arg_length}}, nolog, pass&quot;
+This variable will be used by the OWASP Rules Set, more precisely by the file <b>modsecurity_crs_23_request_limits.conf</b>.<br>
+You need to enable the OWASP-RS in your application to block the request if that value is reached. <br><br></p>
+<p><code>Request body limit</code>: The request body length limit. <br/>
+This value will be set by the following ModSecurity directive: <br>
+SecRequestBodyNoFilesLimit {{policy.request_body_limit}}
+And by the following ModDefender directive: <br>
+RequestBodyLimit {{ policy.request_body_limit }}
+If this variable is reached, ModDefender will send a 403 HTTP code response, and if ModDefender is disable, ModSecurity will send a 413 (Request entity too large) HTTP code response.<br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecRequestBodyNoFilesLimit">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecRequestBodyNoFilesLimit</a> for more informations about the ModSecurity directive, <br>
+and see <a href="https://www.vultureproject.org/doc/waf/waf.html">https://www.vultureproject.org/doc/waf/waf.html</a> for more informations about ModDefender directive. <br><br></p>
+<p><code>Maximum file size, in bytes</code>: The maximum files size allowed to upload. <br/>
+This value will be set by the following ModSecurity directive: <br>
+SecRequestBodyLimit {{policy.max_file_size}}
+If this variable is reached by the &quot;Content-Length&quot; header value, ModSecurity will send a 413 (Request entity too large) HTTP code response.<br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecRequestBodyLimit">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecRequestBodyLimit</a> for more informations about the ModSecurity directive. <br></p>
+<p><code>Maximum combined file size, in bytes</code>: The maximum file size allowed to upload. <br/>
+This value will be set by the following ModSecurity directive: <br>
+SecAction &quot;id:'11', phase:2, t:none, setvar:tx.combined_file_sizes={{policy.combined_file_sizes}}, nolog, pass&quot; <br>
+And will be, in the OWASP Core Rules Set, compared to the ModSecurity variable &quot;FILES_COMBINED_SIZE&quot;. If that value is reached, the anomaly score will be incremented by the &quot;critical_anomaly_score&quot; value. <br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#FILES_COMBINED_SIZE">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#FILES_COMBINED_SIZE</a> for more information about that ModSecurity macro. <br><br></p>
+<p><code>Allowed HTTP versions</code>: Allowed HTTP protocol versions. <br/>
+This value will be set by the following ModSecurity directive: <br>
+setvar:tx.allowed_http_versions={{policy.allowed_http_versions}} <br>
+If a non allowed method is detected, the anomaly score will be incremented by the &quot;warning anomaly score&quot; value by the OWASP-RS, more precisely in the file <b>REQUEST-920-PROTOCOL-ENFORCEMENT.conf</b><br>
+and incremented by the &quot;critical anomaly score&quot; value by the Vulture-RS. <br><br></p>
+<p><code>Allowed request content type</code>: Allowed Content-Type headers. <br/>
+This value will be set by the following ModSecurity directive:
+setvar:tx.allowed_request_content_type={{policy.allowed_request_content_type}}
+If a non allowed Content-Type header is detected, the anomaly score will be incremented by the &quot;warning anomaly score&quot; value by the OWASP-RS, more precisely in the file <b>REQUEST-920-PROTOCOL-ENFORCEMENT.conf</b><br>
+and incremented by the &quot;critical anomaly score&quot; by the Vulture-RS.<br><br></p>
+<p><code>Restricted extensions</code>: The file extension allowed for requested files. <br/>
+This value will be set by the following ModSecurity directive:
+setvar:tx.restricted_extensions={{policy.restricted_extensions}}
+If a non allowed requested file extension is detected, the anomaly score will be incremented by the &quot;critical anomaly score&quot; value by the OWASP-RS, more precisely in the file <b>REQUEST-920-PROTOCOL-ENFORCEMENT.conf</b><br>
+and incremented by the &quot;critical anomaly score&quot; by the Vulture-RS.<br><br></p>
+<p><code>Restricted headers</code>: Restricted (allowed) headers name.<br/>
+This value will be set by the following ModSecurity directive:
+setvar:tx.restricted_headers={{policy.restricted_headers}}
+If a non allowed header name is detected, the anomaly score will be incremented by the &quot;critical anomaly score&quot; value by the OWASP-RS, more precisely in the file <b>REQUEST-920-PROTOCOL-ENFORCEMENT.conf</b><br>
+and incremented by the &quot;critical anomaly score&quot; by the Vulture-RS.<br><br></p>
+<h2 id="dos-amp-bf-protection">DOS &amp; BF Protection</h2>
+<p>You can here define an anti DOS policy by specifying the protected urls (or all), the burst time period, the threshold and the block timeout.<br/>
+The first rule is a default protection for all the URLs. <br>
+If a client request the specified URL more than &quot;DOS Counter threshold&quot; times within a period of &quot;DOS Burst Time Slice&quot; seconds, he will be blocked for a period of &quot;DOS Block Timeout&quot; seconds.</p>
+<pre><code>Since version 1.63 you can enable/disable the global rule.</code></pre>
+<p>Those rules will be defined by the following ModSecurity directives, one per DOS Rule:
+SecAction &quot;id:'', phase:2, t:none, setvar:'tx.brute_force_protected_urls={{dos_rule.url}}', setvar:'tx.brute_force_burst_time_slice={{dos_rule.burst_time_slice}}', setvar:'tx.brute_force_counter_threshold={{dos_rule.counter_threshold}}', setvar:'tx.brute_force_block_timeout={{dos_rule.block_timeout}}', auditlog, pass&quot;
+These directives will be then checked by the following custom ModSecurity directives:
+SecRule IP:BRUTE_FORCE_BLOCK &quot;@eq 1&quot; &quot;chain,phase:3,id:'236',deny,status:403,msg:'Brute Force Attack Identified from %{tx.real_ip} (%{tx.brute_force_block_counter} hits since last alert)',setvar:ip.dos_block_counter=+1&quot;
+SecRule &amp;IP:BRUTE_FORCE_BLOCK_FLAG &quot;@eq 0&quot; &quot;setvar:ip.dos_block_flag=1,expirevar:ip.dos_block_flag=60,setvar:tx.brute_force_block_counter=%{ip.dos_block_counter},setvar:ip.dos_block_counter=0&quot;</p>
+<h1 id="block-and-track--of-requests-but-dont-log">Block and track # of requests but don't log</h1>
+<pre><code>SecRule IP:BRUTE_FORCE_BLOCK "@eq 1" "phase:3,id:'237',deny,status:403,auditlog,setvar:ip.dos_block_counter=+1"
+SecRule &amp;TX:BRUTE_FORCE_PROTECTED_URLS "@eq 0" "phase:5,id:'238',t:none,nolog,pass,skipAfter:END_BRUTE_FORCE_PROTECTION_CHECKS"
+SecRule REQUEST_FILENAME "!@within %{tx.brute_force_protected_urls}" "phase:5,id:'239',t:none,nolog,pass,skipAfter:END_BRUTE_FORCE_PROTECTION_CHECKS"
+SecRule IP:BRUTE_FORCE_BLOCK "@eq 1" "phase:5,id:'240',t:none,nolog,pass,skipAfter:END_BRUTE_FORCE_PROTECTION_CHECKS"
+SecAction "phase:5,id:'241',t:none,auditlog,pass,setvar:ip.dos_counter=+1"
+SecRule IP:BRUTE_FORCE_COUNTER "@gt %{tx.brute_force_counter_threshold}" "phase:5,id:'242',t:none,auditlog,pass,t:none,setvar:ip.dos_burst_counter=+1,expirevar:ip.dos_burst_counter=%{tx.brute_force_burst_time_slice},setvar:!ip.dos_counter"
+SecAction "phase:5,id:'13',auditlog,msg:'%{ip.dos_counter}'"
+SecRule IP:BRUTE_FORCE_BURST_COUNTER "@ge 2" "phase:5,id:'243',t:none,log,pass,msg:'Potential Brute Force Attack from %{tx.real_ip} - # of Request Bursts: %{ip.dos_burst_counter}',setvar:ip.dos_block=1,expirevar:ip.dos_block=%{tx.brute_force_block_timeout}"
+SecMarker END_BRUTE_FORCE_PROTECTION_CHECKS</code></pre>
+<p>Feel free to contact us if you have any improvement relative to these rules. <br><br></p>
+<h2 id="advanced">Advanced</h2>
+<p><code>Arguments separator in forms</code>: Specify which character to use as argument separator.<br/>
+This value will be set by the following ModSecurity directive: <br>
+<b>SecArgumentSeparator</b> <br>
+This option is used for application/x-www-form- urlencoded content. <br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecArgumentSeparator">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecArgumentSeparator</a> for any information about this directive.<br><br></p>
+<p><code>Collections Timeout</code>: Specify the collection timeout, default is 3600 seconds.<br/>
+For each client identified by client-ip/user-agent, a collection is created and maintained in Redis. In case of a client does not contact the server for a timeout, the collection is deleted. <br>
+You can change that value to delete the collections after another timeout. <br>
+That value is set by the following ModSecurity directive : <b>SecCollectionTimeout</b>. <br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecCollectionTimeout">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecCollectionTimeout</a> for more informations about this option. <br><br></p>
+<p><code>Cookie Format</code>: The cookie format, either version 0 (netscape) or version 1 (value can be token or quoted string).<br/>
+That value will be set by the following ModSecurity directive: <b>SecCookieFormat</b>. <br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecCookieFormat">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecCookieFormat</a> for more informations about this option. <br><br></p>
+<p><code>Cookie Separator</code>: The defined cookie seperator. <br/>
+Specifies which character to use as the separator for cookie v0 content. <br>
+That value will be set by the following ModSecurity directive : <b>SecCookieV0Separator</b>. <br>
+See <a href="https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecCookieV0Separator">https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual#SecCookieV0Separator</a> for more informations about this option. <br><br></p>
+<h2 id="custom-directives">Custom directives</h2>
+<p>Here you can add raw mod_security directives.<br/>
+This block will be directly past in the <Proxy> section of the application which use that Policy. <br></p>
+        </section>
+
+    </div>
+</main>
+
+
+
+<script src="https://www.vultureproject.org/js/jquery-1.11.0.min.js"></script>
+<script src="https://www.vultureproject.org/js/bootstrap.min.js"></script>
+<script src="https://www.vultureproject.org/js/highlight.min.js"></script>
+
+<script>
+    $(function() {
+        $("section>h1").wrap('<div class="page-header" />');
+        // Syntax highlighting
+        hljs.initHighlightingOnLoad();
+    });
+</script>
+
+
+</body>
+</html>
+
